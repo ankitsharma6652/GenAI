@@ -10,3 +10,4 @@ wheels/
 .venv
 .agents
 .env
+.DS_Store.DS_Store
