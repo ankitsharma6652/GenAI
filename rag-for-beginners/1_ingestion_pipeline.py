@@ -87,8 +87,9 @@ def main():
     print("=== RAG Document Ingestion Pipeline ===\n")
     
     # Define paths
-    docs_path = "docs"
-    persistent_directory = "db/chroma_db"
+    project_directory = os.path.dirname(os.path.abspath(__file__))
+    docs_path = os.path.join(project_directory, "docs")
+    persistent_directory = os.path.join(project_directory, "db", "chroma_db")
     
     # Check if vector store already exists
     if os.path.exists(persistent_directory):
