@@ -9,3 +9,4 @@ class Person(TypedDict):
 new_person: Person = {'name':'sachin', 'age':"32"}
 
 print(new_person)
+print(type(new_person))

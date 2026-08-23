@@ -41,14 +41,14 @@ print("-" * 60)
 # Only returns documents above a certain similarity score
 # ──────────────────────────────────────────────────────────────────
 
-# print("\n=== METHOD 2: Similarity with Score Threshold ===")
-# retriever = db.as_retriever(
-#     search_type="similarity_score_threshold",
-#     search_kwargs={
-#         "k": 3,
-#         "score_threshold": 0.3  # Only return docs with similarity >= 0.3
-#     }
-# )
+print("\n=== METHOD 2: Similarity with Score Threshold ===")
+retriever = db.as_retriever(
+    search_type="similarity_score_threshold",
+    search_kwargs={
+        "k": 3,
+        "score_threshold": 0.7  # Only return docs with similarity >= 0.7
+    }
+)
 
 # docs = retriever.invoke(query)
 # print(f"Retrieved {len(docs)} documents (threshold: 0.3):\n")
@@ -62,17 +62,24 @@ print("-" * 60)
 # # ──────────────────────────────────────────────────────────────────
 # # METHOD 3: Maximum Marginal Relevance (MMR)
 # # Balances relevance and diversity - avoids redundant results
+
+## The purpose of MMR is to maximize information diversity in search results by 
+## preventing repetitive or redundant text from reaching the AI. It works by picking 
+## the most relevant chunk first, then selecting subsequent chunks only if they bring new, 
+## unique details compared to the ones already chosen.
+
+
 # # ──────────────────────────────────────────────────────────────────
 
-# print("\n=== METHOD 3: Maximum Marginal Relevance (MMR) ===")
-# retriever = db.as_retriever(
-#     search_type="mmr",
-#     search_kwargs={
-#         "k": 3,           # Final number of docs
-#         "fetch_k": 10,    # Initial pool to select from
-#         "lambda_mult": 0.5  # 0=max diversity, 1=max relevance
-#     }
-# )
+print("\n=== METHOD 3: Maximum Marginal Relevance (MMR) ===")
+retriever = db.as_retriever(
+    search_type="mmr",
+    search_kwargs={
+        "k": 3,           # Final number of docs
+        "fetch_k": 10,    # Initial pool to select from
+        "lambda_mult": 0.5  # 0=max diversity, 1=max relevance
+    }
+)
 
 # docs = retriever.invoke(query)
 # print(f"Retrieved {len(docs)} documents (λ=0.5):\n")

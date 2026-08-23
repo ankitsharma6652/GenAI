@@ -19,15 +19,15 @@ template1 = PromptTemplate(
 
 # 2nd prompt -> summary
 template2 = PromptTemplate(
-    template='Write a 5 line summary on the following report. /n {text}',
-    input_variables=['text']
+    template='Write a 5 line summary on the following report. /n {report}',
+    input_variables=['report']
 )
 
 prompt1 = template1.invoke({'topic':'black hole'})
 
 result = model.invoke(prompt1)
 
-prompt2 = template2.invoke({'text':result.content})
+prompt2 = template2.invoke({'report':result.content})
 
 result1 = model.invoke(prompt2)
 

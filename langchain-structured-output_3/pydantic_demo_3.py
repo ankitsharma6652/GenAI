@@ -16,11 +16,11 @@ student = Student(**new_student)
 print(student)
 print(type(student))
 
-student_dict = dict(student)
+# student_dict = dict(student)
 
-print(type(student_dict))
+# print(type(student_dict))
 
-print(student_dict['age'])
+# print(student_dict['age'])
 
 student_json = student.model_dump_json()
 

@@ -1,8 +1,24 @@
 from langchain_chroma import Chroma
-from langchain_openai import OpenAIEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv(override=True)
+
+def get_groq_llm():
+    return ChatOpenAI(
+        model= "openai/gpt-oss-120b",
+        base_url= "https://api.groq.com/openai/v1",
+        api_key= os.getenv("GROQ_API_KEY"),
+        max_tokens= 1000
+    )
+
+
+
 
 
 load_dotenv()
@@ -10,7 +26,7 @@ load_dotenv()
 persistent_directory = "db/chroma_db"
 
 # Load embeddings and vector store
-embedding_model = OpenAIEmbeddings(model="text-embedding-3-small")
+embedding_model = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
 
 db = Chroma(
     persist_directory=persistent_directory,
@@ -50,7 +66,7 @@ Please provide a clear, helpful answer using only the information from these doc
 """
 
 # Create a ChatOpenAI model
-model = ChatOpenAI(model="gpt-4o")
+model = get_groq_llm()
 
 # Define the messages for the model
 messages = [

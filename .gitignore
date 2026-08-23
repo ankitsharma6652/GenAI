@@ -10,3 +10,8 @@ wheels/
 .venv
 .agents
 .env
+# macOS
+.DS_Store
+
+# Local Chroma vector database
+**/chroma_db/
