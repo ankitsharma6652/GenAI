@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS vs Azure vs GCP — Cloud Services Comparison</title>
+<style>
+:root {
+  --bg: #07101e;
+  --bg2: #0d1b2e;
+  --bg3: #111d30;
+  --border: #1a2d4a;
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --aws: #FF9900;
+  --aws-bg: rgba(255,153,0,0.10);
+  --aws-border: rgba(255,153,0,0.35);
+  --az: #0089D6;
+  --az-bg: rgba(0,137,214,0.10);
+  --az-border: rgba(0,137,214,0.35);
+  --gcp: #34A853;
+  --gcp-bg: rgba(52,168,83,0.10);
+  --gcp-border: rgba(52,168,83,0.35);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',Arial,sans-serif;min-height:100vh;}
+
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,#0d1b2e 0%,#071428 100%);border-bottom:1px solid var(--border);padding:24px 32px 0;position:sticky;top:0;z-index:100;box-shadow:0 4px 24px rgba(0,0,0,0.4);}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:12px;}
+.title-group h1{font-size:1.7rem;font-weight:800;background:linear-gradient(90deg,#FF9900,#0089D6,#34A853);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.title-group p{color:var(--muted);font-size:0.85rem;margin-top:2px;}
+.provider-pills{display:flex;gap:8px;flex-wrap:wrap;}
+.pill{padding:5px 14px;border-radius:20px;font-size:0.8rem;font-weight:700;display:flex;align-items:center;gap:6px;}
+.pill-aws{background:var(--aws-bg);border:1.5px solid var(--aws-border);color:var(--aws);}
+.pill-az{background:var(--az-bg);border:1.5px solid var(--az-border);color:var(--az);}
+.pill-gcp{background:var(--gcp-bg);border:1.5px solid var(--gcp-border);color:var(--gcp);}
+
+/* ── SEARCH ── */
+.search-wrap{padding:12px 0 0;display:flex;gap:10px;align-items:center;}
+.search-box{flex:1;max-width:480px;position:relative;}
+.search-box input{width:100%;background:#111d30;border:1.5px solid var(--border);border-radius:10px;padding:10px 14px 10px 40px;color:var(--text);font-size:0.9rem;outline:none;transition:border-color 0.2s;}
+.search-box input:focus{border-color:rgba(255,153,0,0.5);}
+.search-box .si{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:1rem;}
+.result-count{font-size:0.82rem;color:var(--muted);}
+
+/* ── CATEGORY TABS ── */
+.cat-nav{display:flex;gap:4px;overflow-x:auto;padding:12px 0 0;scrollbar-width:none;}
+.cat-nav::-webkit-scrollbar{display:none;}
+.cat-btn{padding:7px 14px;border-radius:8px 8px 0 0;font-size:0.78rem;font-weight:700;border:none;cursor:pointer;white-space:nowrap;transition:all 0.2s;background:var(--bg3);color:var(--muted);border-bottom:2px solid transparent;letter-spacing:0.02em;}
+.cat-btn:hover{color:var(--text);background:#162035;}
+.cat-btn.active{color:#fff;border-bottom:2px solid var(--aws);background:rgba(255,153,0,0.08);}
+
+/* ── MAIN ── */
+.main{padding:24px 32px;max-width:1600px;margin:0 auto;}
+
+/* ── CATEGORY SECTION ── */
+.cat-section{display:none;animation:fadeIn 0.25s ease;}
+.cat-section.visible{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.cat-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.cat-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
+.cat-title{font-size:1.25rem;font-weight:800;color:#fff;}
+.cat-desc{font-size:0.82rem;color:var(--muted);margin-top:2px;}
+
+/* ── SERVICE TABLE ── */
+.svc-table-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:32px;}
+.svc-table{width:100%;border-collapse:collapse;}
+.svc-table thead tr{background:#0d1b2e;}
+.svc-table thead th{padding:13px 16px;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;border-bottom:2px solid var(--border);}
+.th-svc{color:var(--muted);text-align:left;width:200px;}
+.th-aws{color:var(--aws);}
+.th-az{color:var(--az);}
+.th-gcp{color:var(--gcp);}
+.svc-table tbody tr{border-bottom:1px solid rgba(255,255,255,0.04);transition:background 0.15s;}
+.svc-table tbody tr:last-child{border-bottom:none;}
+.svc-table tbody tr:hover{background:rgba(255,255,255,0.025);}
+.svc-table td{padding:13px 16px;font-size:0.84rem;vertical-align:top;}
+.td-label{color:var(--muted);font-weight:600;font-size:0.8rem;}
+.svc-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:6px;font-size:0.8rem;font-weight:600;margin:2px 2px 2px 0;white-space:nowrap;}
+.chip-aws{background:var(--aws-bg);border:1px solid var(--aws-border);color:var(--aws);}
+.chip-az{background:var(--az-bg);border:1px solid var(--az-border);color:#38b2f5;}
+.chip-gcp{background:var(--gcp-bg);border:1px solid var(--gcp-border);color:#4ade80;}
+.svc-note{display:block;font-size:0.73rem;color:var(--muted);margin-top:3px;}
+.na{color:#334155;font-style:italic;font-size:0.78rem;}
+
+/* ── ALL VIEW CARDS ── */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px;}
+.svc-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;}
+.svc-card:hover{border-color:rgba(255,153,0,0.3);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3);}
+.card-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:8px;}
+.card-label span{color:#fbbf24;}
+.card-row{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.card-row:last-child{border-bottom:none;}
+.cr-logo{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800;flex-shrink:0;margin-top:2px;}
+.cr-logo-aws{background:var(--aws-bg);color:var(--aws);border:1px solid var(--aws-border);}
+.cr-logo-az{background:var(--az-bg);color:var(--az);border:1px solid var(--az-border);}
+.cr-logo-gcp{background:var(--gcp-bg);color:var(--gcp);border:1px solid var(--gcp-border);}
+.cr-content{}
+.cr-name{font-size:0.84rem;font-weight:700;color:var(--text);}
+.cr-sub{font-size:0.73rem;color:var(--muted);}
+
+/* ── STATS BAR ── */
+.stats-bar{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px;}
+.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 20px;display:flex;align-items:center;gap:12px;flex:1;min-width:160px;}
+.stat-num{font-size:1.5rem;font-weight:800;}
+.stat-lbl{font-size:0.75rem;color:var(--muted);margin-top:1px;}
+.stat-dot{width:10px;height:10px;border-radius:50%;}
+
+/* ── LEGEND ── */
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;}
+.leg-item{display:flex;align-items:center;gap:6px;font-size:0.8rem;}
+.leg-dot{width:10px;height:10px;border-radius:50%;}
+
+/* ── NO-RESULTS ── */
+.no-results{text-align:center;padding:60px 20px;color:var(--muted);}
+.no-results .nr-icon{font-size:3rem;margin-bottom:12px;}
+.no-results p{font-size:0.9rem;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:#07101e;}
+::-webkit-scrollbar-thumb{background:#1e3a5f;border-radius:3px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .header,.main{padding:16px;}
+  .title-group h1{font-size:1.3rem;}
+  .cat-title{font-size:1rem;}
+  .cards-grid{grid-template-columns:1fr;}
+  .th-svc{width:120px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="title-group">
+      <h1>☁️ Cloud Services Comparison</h1>
+      <p>AWS · Microsoft Azure · Google Cloud Platform — Side-by-side reference for 100+ services across 14 categories</p>
+    </div>
+    <div class="provider-pills">
+      <div class="pill pill-aws">🟠 Amazon Web Services</div>
+      <div class="pill pill-az">🔵 Microsoft Azure</div>
+      <div class="pill pill-gcp">🟢 Google Cloud Platform</div>
+    </div>
+  </div>
+  <div class="search-wrap">
+    <div class="search-box">
+      <span class="si">🔍</span>
+      <input type="text" id="searchInput" placeholder="Search any service... e.g. S3, Blob, Kubernetes, Lambda" oninput="handleSearch()">
+    </div>
+    <div class="result-count" id="resultCount"></div>
+  </div>
+  <nav class="cat-nav" id="catNav"></nav>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="stats-bar">
+    <div class="stat-card"><div class="stat-dot" style="background:#FF9900;"></div><div><div class="stat-num" style="color:#FF9900;">14</div><div class="stat-lbl">Categories</div></div></div>
+    <div class="stat-card"><div class="stat-dot" style="background:#FF9900;"></div><div><div class="stat-num" style="color:#FF9900;">100+</div><div class="stat-lbl">AWS Services</div></div></div>
+    <div class="stat-card"><div class="stat-dot" style="background:#0089D6;"></div><div><div class="stat-num" style="color:#0089D6;">100+</div><div class="stat-lbl">Azure Services</div></div></div>
+    <div class="stat-card"><div class="stat-dot" style="background:#34A853;"></div><div><div class="stat-num" style="color:#34A853;">100+</div><div class="stat-lbl">GCP Services</div></div></div>
+  </div>
+
+  <div id="sectionsContainer"></div>
+  <div class="no-results" id="noResults" style="display:none;">
+    <div class="nr-icon">🔎</div>
+    <p>No services found matching your search.</p>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────────────────────
+// DATA
+// ─────────────────────────────────────────────────────────────────────────────
+var CATEGORIES = [
+{
+  id:"compute", label:"Compute", icon:"⚙️", color:"#fb923c",
+  desc:"Virtual machines, serverless functions, containers, and managed platforms",
+  services:[
+    {sub:"Virtual Machines",       aws:"EC2",                        az:"Azure Virtual Machines",         gcp:"Compute Engine"},
+    {sub:"Serverless Functions",   aws:"AWS Lambda",                 az:"Azure Functions",                gcp:"Cloud Run Functions"},
+    {sub:"Managed App Platform",   aws:"AWS Elastic Beanstalk",      az:"Azure App Services",             gcp:"App Engine"},
+    {sub:"Serverless Containers",  aws:"AWS Fargate / App Runner",   az:"Azure Container Apps",           gcp:"Cloud Run"},
+    {sub:"Batch Computing",        aws:"AWS Batch",                  az:"Azure Batch",                    gcp:"Google Cloud Batch"},
+    {sub:"Bare Metal",             aws:"EC2 Bare Metal",             az:"Azure BareMetal Infrastructure", gcp:"Bare Metal Solution"},
+    {sub:"VMware Cloud",           aws:"VMware Cloud on AWS",        az:"Azure VMware Solution",          gcp:"Google Cloud VMware Engine"},
+    {sub:"High Performance Compute",aws:"AWS ParallelCluster",       az:"Azure HPC",                      gcp:"Cloud HPC Toolkit"},
+    {sub:"Preemptible / Spot VMs", aws:"EC2 Spot Instances",         az:"Azure Spot VMs",                 gcp:"Spot VMs"},
+    {sub:"Auto Scaling",           aws:"EC2 Auto Scaling",           az:"Azure VM Scale Sets",            gcp:"Managed Instance Groups"},
+  ]
+},
+{
+  id:"containers", label:"Containers & K8s", icon:"📦", color:"#38bdf8",
+  desc:"Kubernetes, container registries, orchestration and serverless Kubernetes",
+  services:[
+    {sub:"Managed Kubernetes",          aws:"Amazon EKS",           az:"Azure Kubernetes Service (AKS)",  gcp:"Google Kubernetes Engine (GKE)"},
+    {sub:"Container Orchestration",     aws:"Amazon ECS",           az:"AKS",                             gcp:"Cloud Run"},
+    {sub:"Container Registry",          aws:"Amazon ECR",           az:"Azure Container Registry (ACR)",  gcp:"Artifact Registry (GCR)"},
+    {sub:"Serverless Kubernetes",       aws:"EKS with Fargate",     az:"AKS Automatic / Virtual Nodes",   gcp:"GKE Autopilot"},
+    {sub:"Service Mesh",                aws:"AWS App Mesh",         az:"Azure Service Fabric",            gcp:"Anthos Service Mesh / Cloud Service Mesh"},
+    {sub:"Helm / Package Manager",      aws:"EKS Add-ons",          az:"AKS Extensions",                  gcp:"Config Connector / Helm"},
+    {sub:"Multi-cloud K8s",             aws:"EKS Anywhere",         az:"Azure Arc",                       gcp:"Anthos / GKE Enterprise"},
+  ]
+},
+{
+  id:"storage", label:"Storage", icon:"🗄️", color:"#a78bfa",
+  desc:"Object, block, file, archive and high-performance file storage",
+  services:[
+    {sub:"Object Storage",              aws:"Amazon S3",             az:"Azure Blob Storage",              gcp:"Cloud Storage"},
+    {sub:"Block Storage",               aws:"Amazon EBS",            az:"Azure Managed Disks",             gcp:"Persistent Disk / Hyperdisk"},
+    {sub:"Managed File Storage (NFS)",  aws:"Amazon EFS",            az:"Azure Files",                     gcp:"Filestore"},
+    {sub:"Archive Storage",             aws:"S3 Glacier",            az:"Blob Archive Tier",               gcp:"Cloud Storage Archive Class"},
+    {sub:"High-Perf File System",       aws:"Amazon FSx",            az:"Azure NetApp Files",              gcp:"Filestore High Scale / Parallelstore"},
+    {sub:"Storage Transfer",            aws:"AWS DataSync",          az:"Azure Data Box / AzCopy",         gcp:"Storage Transfer Service"},
+    {sub:"Hybrid Storage",              aws:"AWS Storage Gateway",   az:"Azure StorSimple",                gcp:"Transfer Appliance"},
+    {sub:"Backup",                      aws:"AWS Backup",            az:"Azure Backup",                    gcp:"Backup and DR Service"},
+    {sub:"Data Lake",                   aws:"Amazon S3 + Glue",      az:"Azure Data Lake Storage Gen2",    gcp:"Cloud Storage + BigQuery"},
+  ]
+},
+{
+  id:"database", label:"Databases", icon:"🗃️", color:"#4ade80",
+  desc:"Relational, NoSQL, cache, graph, time-series and data warehouse databases",
+  services:[
+    {sub:"Managed Relational DB",       aws:"Amazon RDS",                        az:"Azure SQL Database",                    gcp:"Cloud SQL"},
+    {sub:"Managed PostgreSQL",          aws:"RDS for PostgreSQL",                az:"Azure Database for PostgreSQL",         gcp:"Cloud SQL for PostgreSQL / AlloyDB"},
+    {sub:"Managed MySQL",               aws:"RDS for MySQL",                     az:"Azure Database for MySQL",              gcp:"Cloud SQL for MySQL"},
+    {sub:"Serverless SQL",              aws:"Amazon Aurora Serverless",          az:"Azure SQL Serverless",                  gcp:"Cloud Spanner / AlloyDB Omni"},
+    {sub:"Global Distributed SQL",      aws:"Amazon Aurora Global DB",           az:"Azure Cosmos DB (SQL API)",             gcp:"Cloud Spanner"},
+    {sub:"NoSQL Key-Value",             aws:"Amazon DynamoDB",                   az:"Azure Cosmos DB (Table API)",           gcp:"Bigtable / Firestore"},
+    {sub:"NoSQL Document DB",           aws:"Amazon DocumentDB",                 az:"Azure Cosmos DB (MongoDB API)",         gcp:"Firestore"},
+    {sub:"Wide Column (Cassandra)",     aws:"Amazon Keyspaces",                  az:"Azure Cosmos DB (Cassandra API)",       gcp:"Bigtable"},
+    {sub:"Graph Database",              aws:"Amazon Neptune",                    az:"Azure Cosmos DB (Gremlin API)",         gcp:"Spanner Graph"},
+    {sub:"In-Memory / Cache (Redis)",   aws:"ElastiCache / MemoryDB",            az:"Azure Cache for Redis",                 gcp:"Memorystore (Redis)"},
+    {sub:"In-Memory (Memcached)",       aws:"ElastiCache (Memcached)",           az:"Azure Cache for Redis (compatible)",    gcp:"Memorystore (Memcached)"},
+    {sub:"Time-Series Database",        aws:"Amazon Timestream",                 az:"Azure Data Explorer",                   gcp:"BigQuery (partitioned) / InfluxDB on GCE"},
+    {sub:"Ledger / Immutable DB",       aws:"Amazon QLDB",                       az:"Azure Confidential Ledger",             gcp:"(Spanner with audit)"},
+    {sub:"Search Engine",               aws:"Amazon OpenSearch Service",         az:"Azure AI Search (Cognitive Search)",    gcp:"Vertex AI Search / Elasticsearch on GCE"},
+  ]
+},
+{
+  id:"networking", label:"Networking", icon:"🌐", color:"#fb7185",
+  desc:"Virtual networks, DNS, load balancers, CDN, VPN, and edge networking",
+  services:[
+    {sub:"Virtual Private Network",     aws:"Amazon VPC",                az:"Azure Virtual Network (VNet)",        gcp:"VPC Network"},
+    {sub:"DNS",                         aws:"Amazon Route 53",           az:"Azure DNS / Azure Traffic Manager",   gcp:"Cloud DNS"},
+    {sub:"Load Balancer",               aws:"Elastic Load Balancing",    az:"Azure Load Balancer",                 gcp:"Cloud Load Balancing"},
+    {sub:"Application Load Balancer",   aws:"ALB (Application LB)",     az:"Azure Application Gateway",           gcp:"Cloud Load Balancing (HTTP(S))"},
+    {sub:"CDN",                         aws:"Amazon CloudFront",         az:"Azure Front Door / Azure CDN",        gcp:"Cloud CDN"},
+    {sub:"NAT Gateway",                 aws:"NAT Gateway",               az:"Azure NAT Gateway",                   gcp:"Cloud NAT"},
+    {sub:"VPN Gateway",                 aws:"AWS Site-to-Site VPN",      az:"Azure VPN Gateway",                   gcp:"Cloud VPN"},
+    {sub:"Dedicated Connection",        aws:"AWS Direct Connect",        az:"Azure ExpressRoute",                  gcp:"Cloud Interconnect"},
+    {sub:"Service Discovery",           aws:"AWS Cloud Map",             az:"Azure Private DNS Zones",             gcp:"Cloud Service Directory"},
+    {sub:"Network Firewall",            aws:"AWS Network Firewall",      az:"Azure Firewall",                      gcp:"Cloud Firewall (Hierarchical)"},
+    {sub:"Private Link / Endpoint",     aws:"AWS PrivateLink",           az:"Azure Private Link",                  gcp:"Private Service Connect"},
+    {sub:"Global Accelerator",          aws:"AWS Global Accelerator",    az:"Azure Front Door (Global)",           gcp:"Cloud Load Balancing (Global)"},
+    {sub:"Peering",                     aws:"VPC Peering",               az:"VNet Peering",                        gcp:"VPC Network Peering"},
+  ]
+},
+{
+  id:"security", label:"Identity & Security", icon:"🔐", color:"#f59e0b",
+  desc:"IAM, secrets, key management, firewall, DDoS protection, threat detection",
+  services:[
+    {sub:"Identity & Access Mgmt",      aws:"AWS IAM",                       az:"Microsoft Entra ID + Azure RBAC",        gcp:"Cloud IAM"},
+    {sub:"Single Sign-On (SSO)",        aws:"AWS IAM Identity Center",       az:"Microsoft Entra ID (Azure AD)",          gcp:"Cloud Identity / Workspace SSO"},
+    {sub:"Key Management",              aws:"AWS KMS",                       az:"Azure Key Vault",                        gcp:"Cloud KMS"},
+    {sub:"Secrets Management",          aws:"AWS Secrets Manager",           az:"Azure Key Vault (Secrets)",              gcp:"Secret Manager"},
+    {sub:"Certificate Management",      aws:"AWS Certificate Manager",       az:"Azure Key Vault (Certificates)",         gcp:"Certificate Manager"},
+    {sub:"Web Application Firewall",    aws:"AWS WAF",                       az:"Azure WAF",                              gcp:"Cloud Armor"},
+    {sub:"DDoS Protection",             aws:"AWS Shield",                    az:"Azure DDoS Protection",                  gcp:"Cloud Armor"},
+    {sub:"Threat Detection",            aws:"Amazon GuardDuty",              az:"Microsoft Defender for Cloud",           gcp:"Security Command Center"},
+    {sub:"Audit Logging",               aws:"AWS CloudTrail",                az:"Azure Monitor / Activity Log",           gcp:"Cloud Audit Logs"},
+    {sub:"Vulnerability Assessment",    aws:"Amazon Inspector",              az:"Microsoft Defender for Cloud",           gcp:"Security Health Analytics"},
+    {sub:"HSM (Hardware Security Mod)", aws:"AWS CloudHSM",                  az:"Azure Dedicated HSM",                    gcp:"Cloud HSM"},
+    {sub:"Zero Trust / Network Policy", aws:"AWS Verified Access",           az:"Azure Zero Trust / Conditional Access",  gcp:"BeyondCorp Enterprise"},
+    {sub:"Policy & Compliance",         aws:"AWS Config + Security Hub",     az:"Azure Policy + Compliance Manager",      gcp:"Policy Controller / Security Command Center"},
+    {sub:"Penetration Testing",         aws:"AWS Pen Testing (policy)",      az:"Microsoft Penetration Testing",          gcp:"GCP Pen Testing (policy)"},
+  ]
+},
+{
+  id:"devops", label:"DevOps & IaC", icon:"🔧", color:"#818cf8",
+  desc:"CI/CD, source control, infrastructure-as-code, monitoring and deployment",
+  services:[
+    {sub:"CI/CD Pipeline",              aws:"AWS CodePipeline",          az:"Azure Pipelines",                    gcp:"Cloud Build"},
+    {sub:"Git Repo Hosting",            aws:"AWS CodeCommit",            az:"Azure Repos",                        gcp:"Cloud Source Repositories"},
+    {sub:"Build Service",               aws:"AWS CodeBuild",             az:"Azure Pipelines Build",              gcp:"Cloud Build"},
+    {sub:"Artifact Repository",         aws:"AWS CodeArtifact",         az:"Azure Artifacts",                    gcp:"Artifact Registry"},
+    {sub:"Infrastructure as Code",      aws:"AWS CloudFormation",        az:"ARM Templates / Bicep",              gcp:"Deployment Manager / Terraform on GCP"},
+    {sub:"Configuration Management",    aws:"AWS OpsWorks / Systems Mgr",az:"Azure Automation / State Config",    gcp:"Ansible on GCP / Config Management"},
+    {sub:"Container Deploy (CD)",       aws:"AWS CodeDeploy",            az:"Azure Deployment Center",            gcp:"Cloud Deploy"},
+    {sub:"GitOps",                      aws:"AWS CodePipeline + Flux",   az:"Azure Arc GitOps",                   gcp:"Anthos Config Management"},
+    {sub:"Service Catalog",             aws:"AWS Service Catalog",       az:"Azure Marketplace",                  gcp:"GCP Marketplace"},
+    {sub:"Dev Environments",            aws:"AWS Cloud9 / CodeCatalyst", az:"GitHub Codespaces / Azure DevBox",   gcp:"Cloud Workstations"},
+    {sub:"Full DevOps Suite",           aws:"AWS Developer Tools Suite", az:"Azure DevOps",                       gcp:"Cloud Build + Cloud Deploy + AR"},
+  ]
+},
+{
+  id:"monitoring", label:"Monitoring & Observability", icon:"📊", color:"#2dd4bf",
+  desc:"Metrics, logs, tracing, dashboards, alerting and performance monitoring",
+  services:[
+    {sub:"Monitoring / Metrics",        aws:"Amazon CloudWatch",             az:"Azure Monitor",                      gcp:"Cloud Monitoring"},
+    {sub:"Logging",                     aws:"CloudWatch Logs",               az:"Log Analytics (Azure Monitor)",      gcp:"Cloud Logging"},
+    {sub:"Distributed Tracing",         aws:"AWS X-Ray",                     az:"Azure Application Insights",         gcp:"Cloud Trace"},
+    {sub:"APM / App Insights",          aws:"Amazon DevOps Guru",            az:"Azure Application Insights",         gcp:"Cloud Profiler"},
+    {sub:"Dashboards",                  aws:"CloudWatch Dashboards",         az:"Azure Workbooks / Grafana",          gcp:"Cloud Monitoring Dashboards"},
+    {sub:"Alerting",                    aws:"CloudWatch Alarms",             az:"Azure Alerts",                       gcp:"Cloud Monitoring Alerting"},
+    {sub:"Infrastructure Monitoring",   aws:"CloudWatch Container Insights",  az:"Container Insights (AKS)",           gcp:"Cloud Monitoring (GKE)"},
+    {sub:"Status / Uptime Checks",      aws:"CloudWatch Synthetics",         az:"Azure Monitor Availability",         gcp:"Cloud Monitoring Uptime Checks"},
+    {sub:"Cost Monitoring",             aws:"AWS Cost Explorer",             az:"Azure Cost Management",              gcp:"Cloud Billing Reports"},
+    {sub:"Managed Grafana",             aws:"Amazon Managed Grafana",        az:"Azure Managed Grafana",              gcp:"Cloud Monitoring (Grafana compatible)"},
+  ]
+},
+{
+  id:"messaging", label:"Messaging & Integration", icon:"📨", color:"#f472b6",
+  desc:"Queues, pub/sub, event buses, API gateways and workflow orchestration",
+  services:[
+    {sub:"Message Queue (SQS-style)",   aws:"Amazon SQS",                az:"Azure Service Bus (Queues)",          gcp:"Cloud Pub/Sub (pull)"},
+    {sub:"Pub/Sub Messaging",           aws:"Amazon SNS",                az:"Azure Service Bus (Topics)",          gcp:"Cloud Pub/Sub"},
+    {sub:"Event Streaming (Kafka)",     aws:"Amazon Kinesis / MSK",      az:"Azure Event Hubs",                    gcp:"Cloud Pub/Sub / Datastream"},
+    {sub:"Event Bus",                   aws:"Amazon EventBridge",        az:"Azure Event Grid",                    gcp:"Eventarc"},
+    {sub:"Message Broker",              aws:"Amazon MQ",                 az:"Azure Service Bus",                   gcp:"Cloud Pub/Sub"},
+    {sub:"API Gateway",                 aws:"Amazon API Gateway",        az:"Azure API Management",                gcp:"Apigee / Cloud Endpoints"},
+    {sub:"Workflow Orchestration",      aws:"AWS Step Functions",        az:"Azure Logic Apps / Durable Functions",gcp:"Cloud Workflows"},
+    {sub:"Push Notifications",          aws:"Amazon SNS (Mobile Push)",  az:"Azure Notification Hubs",             gcp:"Firebase Cloud Messaging"},
+    {sub:"Application Integration",    aws:"Amazon AppFlow",            az:"Azure Logic Apps",                    gcp:"Cloud Integration Connectors"},
+    {sub:"Email/SMS Notifications",     aws:"Amazon SES / SNS",          az:"Azure Communication Services",        gcp:"(3rd party / Twilio / SendGrid)"},
+  ]
+},
+{
+  id:"analytics", label:"Analytics & Big Data", icon:"📈", color:"#facc15",
+  desc:"Data warehousing, ETL, stream processing, visualization and data lakes",
+  services:[
+    {sub:"Data Warehouse",              aws:"Amazon Redshift",           az:"Azure Synapse Analytics",             gcp:"BigQuery"},
+    {sub:"Stream Processing",           aws:"Amazon Kinesis",            az:"Azure Stream Analytics",              gcp:"Dataflow (Apache Beam)"},
+    {sub:"Batch ETL / Data Prep",       aws:"AWS Glue",                  az:"Azure Data Factory",                  gcp:"Dataflow / Dataprep"},
+    {sub:"Hadoop / Spark",              aws:"Amazon EMR",                az:"Azure HDInsight",                     gcp:"Dataproc"},
+    {sub:"Business Intelligence",       aws:"Amazon QuickSight",         az:"Microsoft Power BI",                  gcp:"Looker / Looker Studio"},
+    {sub:"Data Catalog",                aws:"AWS Glue Data Catalog",     az:"Microsoft Purview",                   gcp:"Dataplex / Data Catalog"},
+    {sub:"Search & Analytics",          aws:"Amazon OpenSearch",         az:"Azure AI Search",                     gcp:"Vertex AI Search"},
+    {sub:"Data Pipeline",               aws:"AWS Data Pipeline",         az:"Azure Data Factory",                  gcp:"Cloud Composer (Airflow)"},
+    {sub:"Data Sharing",                aws:"AWS Data Exchange",         az:"Azure Data Share",                    gcp:"Analytics Hub"},
+    {sub:"Query Service (Athena)",      aws:"Amazon Athena",             az:"Azure Synapse Serverless SQL",        gcp:"BigQuery (serverless)"},
+  ]
+},
+{
+  id:"aiml", label:"AI / ML", icon:"🤖", color:"#c084fc",
+  desc:"Machine learning, gen AI, vision, speech, NLP and specialized AI services",
+  services:[
+    {sub:"ML Platform / Studio",        aws:"Amazon SageMaker",          az:"Azure Machine Learning",              gcp:"Vertex AI"},
+    {sub:"Gen AI Platform",             aws:"Amazon Bedrock",            az:"Azure AI Foundry (MS Foundry)",       gcp:"Vertex AI (Gemini API)"},
+    {sub:"AI Agent Builder",            aws:"Bedrock Agents",            az:"Azure AI Foundry Agent Service",      gcp:"Vertex AI Agent Builder"},
+    {sub:"Foundation Model Hosting",    aws:"Bedrock (Claude, Titan..)", az:"Azure OpenAI Service",                gcp:"Model Garden (Gemini, Llama..)"},
+    {sub:"ML Pipeline / MLOps",         aws:"SageMaker Pipelines",       az:"Azure ML Pipelines",                  gcp:"Vertex AI Pipelines"},
+    {sub:"Speech to Text",              aws:"Amazon Transcribe",         az:"Azure AI Speech (STT)",               gcp:"Speech-to-Text"},
+    {sub:"Text to Speech",              aws:"Amazon Polly",              az:"Azure AI Speech (TTS / Neural TTS)",  gcp:"Text-to-Speech"},
+    {sub:"Computer Vision",             aws:"Amazon Rekognition",        az:"Azure AI Vision",                     gcp:"Vision AI / Cloud Vision API"},
+    {sub:"Natural Language (NLU/NLP)",  aws:"Amazon Comprehend",         az:"Azure AI Language",                   gcp:"Natural Language AI"},
+    {sub:"Translation",                 aws:"Amazon Translate",          az:"Azure AI Translator",                 gcp:"Cloud Translation"},
+    {sub:"OCR / Document Analysis",     aws:"Amazon Textract",           az:"Azure AI Document Intelligence",      gcp:"Document AI"},
+    {sub:"Chatbot / Conversational AI", aws:"Amazon Lex",                az:"Azure Bot Service",                   gcp:"Dialogflow / CCAI"},
+    {sub:"Recommendation Engine",       aws:"Amazon Personalize",        az:"Azure Personalizer (retiring)",       gcp:"Vertex AI (Recommendations)"},
+    {sub:"Search (AI-powered)",         aws:"Amazon Kendra",             az:"Azure AI Search",                     gcp:"Vertex AI Search"},
+    {sub:"Code Generation",             aws:"Amazon CodeWhisperer / Q",  az:"GitHub Copilot / Azure AI",           gcp:"Gemini Code Assist"},
+  ]
+},
+{
+  id:"migration", label:"Migration & Hybrid", icon:"🔄", color:"#94a3b8",
+  desc:"Server migration, database migration, hybrid cloud and edge computing",
+  services:[
+    {sub:"Migration Hub / Planning",    aws:"AWS Migration Hub",          az:"Azure Migrate",                       gcp:"Migrate to VMs (Migrate for CE)"},
+    {sub:"Server Migration",            aws:"AWS Application Migration",  az:"Azure Site Recovery",                 gcp:"Migrate for Compute Engine"},
+    {sub:"Database Migration",          aws:"AWS Database Migration Svc", az:"Azure Database Migration Service",    gcp:"Database Migration Service"},
+    {sub:"Data Transfer Appliance",     aws:"AWS Snowball / Snowmobile",  az:"Azure Data Box",                      gcp:"Transfer Appliance"},
+    {sub:"Hybrid Cloud",                aws:"AWS Outposts",               az:"Azure Stack Hub / Arc",               gcp:"Distributed Cloud / Anthos"},
+    {sub:"Edge Computing",              aws:"AWS Local Zones / Wavelength",az:"Azure Edge Zones",                   gcp:"Distributed Cloud Edge"},
+    {sub:"VMware Migration",            aws:"VMware Cloud on AWS",        az:"Azure VMware Solution",               gcp:"Google Cloud VMware Engine"},
+    {sub:"Lift & Shift Assessment",     aws:"AWS Migration Evaluator",    az:"Azure Migrate (Assessment)",          gcp:"StratoZone / Migration Center"},
+  ]
+},
+{
+  id:"iot", label:"IoT & Edge", icon:"🔌", color:"#22d3ee",
+  desc:"IoT device management, time-series data, edge computing and digital twins",
+  services:[
+    {sub:"IoT Platform",                aws:"AWS IoT Core",               az:"Azure IoT Hub",                       gcp:"Cloud IoT / Pub/Sub + Vertex AI"},
+    {sub:"IoT Device Management",       aws:"AWS IoT Device Management",  az:"Azure IoT Device Provisioning",       gcp:"Cloud IoT Device Management"},
+    {sub:"Digital Twins",               aws:"AWS IoT TwinMaker",          az:"Azure Digital Twins",                 gcp:"(3rd party / Vertex AI + Maps)"},
+    {sub:"Edge ML Inference",           aws:"AWS Greengrass",             az:"Azure IoT Edge",                      gcp:"Vertex AI Edge"},
+    {sub:"Time-Series IoT Data",        aws:"Amazon Timestream",          az:"Azure Time Series Insights",          gcp:"BigQuery / Bigtable"},
+    {sub:"Industrial IoT",              aws:"AWS Industrial IoT Suite",   az:"Azure IoT Operations",                gcp:"Google Distributed Cloud"},
+  ]
+},
+{
+  id:"developer", label:"Developer Tools", icon:"🛠️", color:"#f97316",
+  desc:"CLIs, SDKs, API management, testing, documentation and developer portals",
+  services:[
+    {sub:"Command Line Interface",      aws:"AWS CLI",                    az:"Azure CLI",                           gcp:"gcloud CLI"},
+    {sub:"SDK",                         aws:"AWS SDKs (20+ languages)",   az:"Azure SDKs (20+ languages)",          gcp:"Google Cloud SDKs (20+ lang)"},
+    {sub:"Cloud Shell",                 aws:"AWS CloudShell",             az:"Azure Cloud Shell",                   gcp:"Cloud Shell"},
+    {sub:"IDE Integration",             aws:"AWS Toolkit (VS Code etc)",  az:"Azure Tools (VS Code etc)",           gcp:"Cloud Code (VS Code / IntelliJ)"},
+    {sub:"API Management",              aws:"Amazon API Gateway",         az:"Azure API Management",                gcp:"Apigee"},
+    {sub:"Testing / Test Lab",          aws:"AWS Device Farm",            az:"Azure DevTest Labs",                  gcp:"Firebase Test Lab"},
+    {sub:"Cost Optimization",           aws:"AWS Compute Optimizer",      az:"Azure Advisor",                       gcp:"GCP Recommender"},
+    {sub:"Billing & Cost",              aws:"AWS Cost Explorer / Budgets", az:"Azure Cost Management + Billing",    gcp:"Cloud Billing"},
+    {sub:"Documentation Portal",        aws:"docs.aws.amazon.com",        az:"learn.microsoft.com/azure",           gcp:"cloud.google.com/docs"},
+    {sub:"Free Tier",                   aws:"AWS Free Tier (12-month)",   az:"Azure Free Account (12-month)",       gcp:"GCP Free Tier (always free)"},
+  ]
+}
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RENDER
+// ─────────────────────────────────────────────────────────────────────────────
+var currentCat = 'compute';
+var searchQuery = '';
+
+function buildCatNav() {
+  var nav = document.getElementById('catNav');
+  var html = '<button class="cat-btn active" data-cat="all" onclick="switchCat(\'all\',this)">🌐 All</button>';
+  CATEGORIES.forEach(function(c) {
+    html += '<button class="cat-btn" data-cat="'+c.id+'" onclick="switchCat(\''+c.id+'\',this)">'+c.icon+' '+c.label+'</button>';
+  });
+  nav.innerHTML = html;
+}
+
+function buildSections() {
+  var container = document.getElementById('sectionsContainer');
+  var html = '';
+
+  // ALL VIEW
+  html += '<div class="cat-section visible" id="sec-all">';
+  CATEGORIES.forEach(function(cat) {
+    html += '<div class="cat-section-group" id="grp-'+cat.id+'" data-catid="'+cat.id+'">';
+    html += renderCatHeader(cat);
+    html += renderTable(cat);
+    html += '</div>';
+  });
+  html += '</div>';
+
+  // Individual category sections
+  CATEGORIES.forEach(function(cat) {
+    html += '<div class="cat-section" id="sec-'+cat.id+'">';
+    html += renderCatHeader(cat);
+    html += renderTable(cat);
+    html += '</div>';
+  });
+
+  container.innerHTML = html;
+}
+
+function renderCatHeader(cat) {
+  return '<div class="cat-header">'+
+    '<div class="cat-icon" style="background:'+hexToRgba(cat.color,0.12)+';border:1.5px solid '+hexToRgba(cat.color,0.35)+';">'+cat.icon+'</div>'+
+    '<div><div class="cat-title" style="color:'+cat.color+';">'+cat.label+'</div><div class="cat-desc">'+cat.desc+'</div></div>'+
+  '</div>';
+}
+
+function renderTable(cat) {
+  var rows = '';
+  cat.services.forEach(function(s) {
+    rows += '<tr class="svc-row" data-search="'+[s.sub,s.aws,s.az,s.gcp].join(' ').toLowerCase()+'">'+
+      '<td class="td-label">'+s.sub+'</td>'+
+      '<td>'+renderChip(s.aws,'aws')+'</td>'+
+      '<td>'+renderChip(s.az,'az')+'</td>'+
+      '<td>'+renderChip(s.gcp,'gcp')+'</td>'+
+    '</tr>';
+  });
+  return '<div class="svc-table-wrap" style="margin-bottom:28px;">'+
+    '<table class="svc-table">'+
+      '<thead><tr>'+
+        '<th class="th-svc">Service Type</th>'+
+        '<th class="th-aws">🟠 AWS</th>'+
+        '<th class="th-az">🔵 Azure</th>'+
+        '<th class="th-gcp">🟢 GCP</th>'+
+      '</tr></thead>'+
+      '<tbody>'+rows+'</tbody>'+
+    '</table>'+
+  '</div>';
+}
+
+function renderChip(val, provider) {
+  if (!val || val === '-') return '<span class="na">—</span>';
+  var parts = val.split(' / ');
+  return parts.map(function(p) {
+    return '<span class="svc-chip chip-'+provider+'">'+p.trim()+'</span>';
+  }).join('');
+}
+
+function hexToRgba(hex, alpha) {
+  var r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  return 'rgba('+r+','+g+','+b+','+alpha+')';
+}
+
+function switchCat(catId, btn) {
+  // update buttons
+  document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  currentCat = catId;
+
+  // show/hide sections
+  document.querySelectorAll('.cat-section').forEach(function(s){ s.classList.remove('visible'); });
+  var target = document.getElementById('sec-'+catId);
+  if (target) { target.classList.add('visible'); }
+
+  // clear search on tab switch
+  document.getElementById('searchInput').value = '';
+  searchQuery = '';
+  applySearch();
+}
+
+function handleSearch() {
+  searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
+  if (searchQuery) {
+    // switch to ALL view when searching
+    currentCat = 'all';
+    document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('active'); });
+    document.querySelector('[data-cat="all"]').classList.add('active');
+    document.querySelectorAll('.cat-section').forEach(function(s){ s.classList.remove('visible'); });
+    document.getElementById('sec-all').classList.add('visible');
+  }
+  applySearch();
+}
+
+function applySearch() {
+  var total = 0, visible = 0;
+  var groups = document.querySelectorAll('.cat-section-group');
+  groups.forEach(function(grp) {
+    var rows = grp.querySelectorAll('.svc-row');
+    var grpVisible = 0;
+    rows.forEach(function(row) {
+      total++;
+      var match = !searchQuery || row.dataset.search.indexOf(searchQuery) !== -1;
+      row.style.display = match ? '' : 'none';
+      if (match) { grpVisible++; visible++; }
+    });
+    grp.style.display = grpVisible ? '' : 'none';
+  });
+
+  var countEl = document.getElementById('resultCount');
+  var noRes = document.getElementById('noResults');
+  if (searchQuery) {
+    countEl.textContent = visible + ' result' + (visible !== 1 ? 's' : '') + ' found';
+    noRes.style.display = visible === 0 ? '' : 'none';
+  } else {
+    countEl.textContent = '';
+    noRes.style.display = 'none';
+    // restore all groups
+    groups.forEach(function(g){ g.style.display=''; });
+    document.querySelectorAll('.svc-row').forEach(function(r){ r.style.display=''; });
+  }
+}
+
+// ─── INIT ───
+buildCatNav();
+buildSections();
+</script>
+</body>
+</html>
