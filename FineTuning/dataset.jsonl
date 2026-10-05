@@ -1,0 +1,516 @@
+{"messages": [{"role": "user", "content": "नमस्ते"}, {"role": "assistant", "content": "नमस्ते जी! आपका स्वागत है।"}]}
+{"messages": [{"role": "user", "content": "आप कैसे हैं?"}, {"role": "assistant", "content": "मैं ठीक हूँ। आप कैसे हैं?"}]}
+{"messages": [{"role": "user", "content": "आपका नाम क्या है?"}, {"role": "assistant", "content": "मेरा नाम दोस्त है।"}]}
+{"messages": [{"role": "user", "content": "आप कौन हैं?"}, {"role": "assistant", "content": "मैं आपका दोस्त हूँ।"}]}
+{"messages": [{"role": "user", "content": "धन्यवाद"}, {"role": "assistant", "content": "आपका स्वागत है!"}]}
+{"messages": [{"role": "user", "content": "नमस्ते दोस्त"}, {"role": "assistant", "content": "नमस्ते! आप कैसे हैं?"}]}
+{"messages": [{"role": "user", "content": "नमस्कार"}, {"role": "assistant", "content": "नमस्कार जी! आप कैसे हैं?"}]}
+{"messages": [{"role": "user", "content": "अलविदा"}, {"role": "assistant", "content": "अलविदा दोस्त! फिर मिलेंगे।"}]}
+{"messages": [{"role": "user", "content": "प्रणाम"}, {"role": "assistant", "content": "प्रणाम जी! खुश रहिए।"}]}
+{"messages": [{"role": "user", "content": "क्या आप ठीक हैं?"}, {"role": "assistant", "content": "हाँ, मैं बहुत अच्छा हूँ।"}]}
+{"messages": [{"role": "user", "content": "आपका भाई कहाँ है?"}, {"role": "assistant", "content": "मेरा भाई घर पर है।"}]}
+{"messages": [{"role": "user", "content": "आपकी बहन क्या करती है?"}, {"role": "assistant", "content": "मेरी बहन पुस्तक पढ़ती है।"}]}
+{"messages": [{"role": "user", "content": "आपके पिता कहाँ हैं?"}, {"role": "assistant", "content": "मेरे पिता शहर गए हैं।"}]}
+{"messages": [{"role": "user", "content": "आपकी माँ कहाँ हैं?"}, {"role": "assistant", "content": "मेरी माँ घर के अंदर हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास दोस्त हैं?"}, {"role": "assistant", "content": "हाँ, मेरे पास अच्छे दोस्त हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटा कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटा स्कूल गया है।"}]}
+{"messages": [{"role": "user", "content": "आपकी बेटी क्या कर रही है?"}, {"role": "assistant", "content": "मेरी बेटी पानी पी रही है।"}]}
+{"messages": [{"role": "user", "content": "ये लोग कौन हैं?"}, {"role": "assistant", "content": "ये लोग मेरे दोस्त हैं।"}]}
+{"messages": [{"role": "user", "content": "वह आदमी कौन है?"}, {"role": "assistant", "content": "वह आदमी मेरा भाई है।"}]}
+{"messages": [{"role": "user", "content": "वह औरत कौन है?"}, {"role": "assistant", "content": "वह औरत मेरी माँ है।"}]}
+{"messages": [{"role": "user", "content": "वह बच्चा क्या कर रहा है?"}, {"role": "assistant", "content": "वह बच्चा रोटी खा रहा है।"}]}
+{"messages": [{"role": "user", "content": "यह क्या है?"}, {"role": "assistant", "content": "यह एक सुंदर फूल है।"}]}
+{"messages": [{"role": "user", "content": "वह क्या है?"}, {"role": "assistant", "content": "वह एक बड़ा पेड़ है।"}]}
+{"messages": [{"role": "user", "content": "पेड़ पर क्या है?"}, {"role": "assistant", "content": "पेड़ पर हरा पत्ता है।"}]}
+{"messages": [{"role": "user", "content": "आकाश कैसा है?"}, {"role": "assistant", "content": "आकाश नीला और साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "सूरज कहाँ है?"}, {"role": "assistant", "content": "सूरज आकाश में है।"}]}
+{"messages": [{"role": "user", "content": "चाँद कब आता है?"}, {"role": "assistant", "content": "चाँद रात को आता है।"}]}
+{"messages": [{"role": "user", "content": "मौसम कैसा है?"}, {"role": "assistant", "content": "आज मौसम बहुत गरम है।"}]}
+{"messages": [{"role": "user", "content": "क्या आज बारिश होगी?"}, {"role": "assistant", "content": "हाँ, आज बारिश होगी।"}]}
+{"messages": [{"role": "user", "content": "क्या आपको ठंड लग रही है?"}, {"role": "assistant", "content": "हाँ, मुझे बहुत ठंड लग रही है।"}]}
+{"messages": [{"role": "user", "content": "क्या यहाँ गर्मी है?"}, {"role": "assistant", "content": "हाँ, यहाँ बहुत गर्मी है।"}]}
+{"messages": [{"role": "user", "content": "नदी कहाँ बहती है?"}, {"role": "assistant", "content": "नदी पहाड़ से नीचे बहती है।"}]}
+{"messages": [{"role": "user", "content": "वह पहाड़ कैसा है?"}, {"role": "assistant", "content": "वह पहाड़ बहुत बड़ा है।"}]}
+{"messages": [{"role": "user", "content": "मिट्टी कैसी है?"}, {"role": "assistant", "content": "मिट्टी साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "आग कहाँ है?"}, {"role": "assistant", "content": "आग घर के बाहर है।"}]}
+{"messages": [{"role": "user", "content": "क्या आप चाय पिएंगे?"}, {"role": "assistant", "content": "हाँ, मैं चाय पीता हूँ।"}]}
+{"messages": [{"role": "user", "content": "चाय कैसी है?"}, {"role": "assistant", "content": "चाय बहुत मीठी है।"}]}
+{"messages": [{"role": "user", "content": "दूध कहाँ है?"}, {"role": "assistant", "content": "दूध घर के अंदर है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास रोटी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास रोटी और फल हैं।"}]}
+{"messages": [{"role": "user", "content": "पानी लाओ"}, {"role": "assistant", "content": "मैं पानी लाता हूँ। लो, पानी पियो।"}]}
+{"messages": [{"role": "user", "content": "क्या आपको भूख लगी है?"}, {"role": "assistant", "content": "हाँ, मुझे बहुत भूख लगी है। मुझे खाना खाना है।"}]}
+{"messages": [{"role": "user", "content": "क्या खाना अच्छा है?"}, {"role": "assistant", "content": "हाँ, खाना बहुत अच्छा और गरम है।"}]}
+{"messages": [{"role": "user", "content": "आप क्या पी रहे हैं?"}, {"role": "assistant", "content": "मैं ठंडा पानी पी रहा हूँ।"}]}
+{"messages": [{"role": "user", "content": "फल कहाँ है?"}, {"role": "assistant", "content": "फल पेड़ पर है।"}]}
+{"messages": [{"role": "user", "content": "आप क्या कर रहे हैं?"}, {"role": "assistant", "content": "मैं अपना काम कर रहा हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब काम करते हैं?"}, {"role": "assistant", "content": "मैं सुबह काम करता हूँ और रात को सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप स्कूल जाते हैं?"}, {"role": "assistant", "content": "हाँ, मैं स्कूल जाता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप पुस्तक क्यों पढ़ रहे हैं?"}, {"role": "assistant", "content": "क्योंकि मुझे पढ़ना बहुत अच्छा लगता है।"}]}
+{"messages": [{"role": "user", "content": "कलम कहाँ है?"}, {"role": "assistant", "content": "कलम पुस्तक के ऊपर है।"}]}
+{"messages": [{"role": "user", "content": "कागज़ पर क्या लिखा है?"}, {"role": "assistant", "content": "कागज़ पर मेरा नाम लिखा है।"}]}
+{"messages": [{"role": "user", "content": "आप कहाँ जा रहे हैं?"}, {"role": "assistant", "content": "मैं अपने घर जा रहा हूँ।"}]}
+{"messages": [{"role": "user", "content": "गाड़ी कहाँ है?"}, {"role": "assistant", "content": "गाड़ी रास्ते पर है।"}]}
+{"messages": [{"role": "user", "content": "क्या आप दौड़ सकते हैं?"}, {"role": "assistant", "content": "हाँ, मैं तेज़ दौड़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कैसे चलते हैं?"}, {"role": "assistant", "content": "मैं धीरे-धीरे चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "मेरी मदद करो"}, {"role": "assistant", "content": "हाँ, मैं आपकी मदद करता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप क्या सोच रहे हैं?"}, {"role": "assistant", "content": "मैं अपने काम को सोच रहा हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप यह बात समझते हैं?"}, {"role": "assistant", "content": "हाँ, मैं आपकी बात समझता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप मुझे कैसे जानते हैं?"}, {"role": "assistant", "content": "मैं आपको बहुत पहले से जानता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप क्या बोल रहे हैं?"}, {"role": "assistant", "content": "मैं सच बोल रहा हूँ।"}]}
+{"messages": [{"role": "user", "content": "मेरी बात सुनो"}, {"role": "assistant", "content": "हाँ, मैं आपकी बात सुनता हूँ। कहो।"}]}
+{"messages": [{"role": "user", "content": "आप क्या देख रहे हैं?"}, {"role": "assistant", "content": "मैं सुंदर पेड़ देख रहा हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप सोते हैं?"}, {"role": "assistant", "content": "हाँ, मैं रात को सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं सुबह जल्दी उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "यहाँ बैठो"}, {"role": "assistant", "content": "हाँ, मैं यहाँ बैठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "वहाँ मत जाओ"}, {"role": "assistant", "content": "ठीक है, मैं वहाँ नहीं जाता।"}]}
+{"messages": [{"role": "user", "content": "आपका दोस्त कहाँ है?"}, {"role": "assistant", "content": "मेरा दोस्त घर पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका दोस्त कहाँ है?"}, {"role": "assistant", "content": "मेरा दोस्त शहर में है।"}]}
+{"messages": [{"role": "user", "content": "आपका दोस्त कहाँ है?"}, {"role": "assistant", "content": "मेरा दोस्त गांव में है।"}]}
+{"messages": [{"role": "user", "content": "आपका दोस्त कहाँ है?"}, {"role": "assistant", "content": "मेरा दोस्त पेड़ के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका दोस्त कहाँ है?"}, {"role": "assistant", "content": "मेरा दोस्त नदी के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका दोस्त कहाँ है?"}, {"role": "assistant", "content": "मेरा दोस्त पहाड़ पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका दोस्त कहाँ है?"}, {"role": "assistant", "content": "मेरा दोस्त रास्ते पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका दोस्त कहाँ है?"}, {"role": "assistant", "content": "मेरा दोस्त बाहर है।"}]}
+{"messages": [{"role": "user", "content": "आपका दोस्त कहाँ है?"}, {"role": "assistant", "content": "मेरा दोस्त अंदर है।"}]}
+{"messages": [{"role": "user", "content": "आपका भाई कहाँ है?"}, {"role": "assistant", "content": "मेरा भाई घर पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका भाई कहाँ है?"}, {"role": "assistant", "content": "मेरा भाई शहर में है।"}]}
+{"messages": [{"role": "user", "content": "आपका भाई कहाँ है?"}, {"role": "assistant", "content": "मेरा भाई गांव में है।"}]}
+{"messages": [{"role": "user", "content": "आपका भाई कहाँ है?"}, {"role": "assistant", "content": "मेरा भाई पेड़ के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका भाई कहाँ है?"}, {"role": "assistant", "content": "मेरा भाई नदी के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका भाई कहाँ है?"}, {"role": "assistant", "content": "मेरा भाई पहाड़ पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका भाई कहाँ है?"}, {"role": "assistant", "content": "मेरा भाई रास्ते पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका भाई कहाँ है?"}, {"role": "assistant", "content": "मेरा भाई बाहर है।"}]}
+{"messages": [{"role": "user", "content": "आपका भाई कहाँ है?"}, {"role": "assistant", "content": "मेरा भाई अंदर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बहन कहाँ है?"}, {"role": "assistant", "content": "मेरा बहन घर पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बहन कहाँ है?"}, {"role": "assistant", "content": "मेरा बहन शहर में है।"}]}
+{"messages": [{"role": "user", "content": "आपका बहन कहाँ है?"}, {"role": "assistant", "content": "मेरा बहन गांव में है।"}]}
+{"messages": [{"role": "user", "content": "आपका बहन कहाँ है?"}, {"role": "assistant", "content": "मेरा बहन पेड़ के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका बहन कहाँ है?"}, {"role": "assistant", "content": "मेरा बहन नदी के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका बहन कहाँ है?"}, {"role": "assistant", "content": "मेरा बहन पहाड़ पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बहन कहाँ है?"}, {"role": "assistant", "content": "मेरा बहन रास्ते पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बहन कहाँ है?"}, {"role": "assistant", "content": "मेरा बहन बाहर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बहन कहाँ है?"}, {"role": "assistant", "content": "मेरा बहन अंदर है।"}]}
+{"messages": [{"role": "user", "content": "आपका माँ कहाँ है?"}, {"role": "assistant", "content": "मेरा माँ घर पर हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका माँ कहाँ है?"}, {"role": "assistant", "content": "मेरा माँ शहर में हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका माँ कहाँ है?"}, {"role": "assistant", "content": "मेरा माँ गांव में हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका माँ कहाँ है?"}, {"role": "assistant", "content": "मेरा माँ पेड़ के पास हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका माँ कहाँ है?"}, {"role": "assistant", "content": "मेरा माँ नदी के पास हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका माँ कहाँ है?"}, {"role": "assistant", "content": "मेरा माँ पहाड़ पर हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका माँ कहाँ है?"}, {"role": "assistant", "content": "मेरा माँ रास्ते पर हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका माँ कहाँ है?"}, {"role": "assistant", "content": "मेरा माँ बाहर हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका माँ कहाँ है?"}, {"role": "assistant", "content": "मेरा माँ अंदर हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका पिता कहाँ है?"}, {"role": "assistant", "content": "मेरा पिता घर पर हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका पिता कहाँ है?"}, {"role": "assistant", "content": "मेरा पिता शहर में हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका पिता कहाँ है?"}, {"role": "assistant", "content": "मेरा पिता गांव में हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका पिता कहाँ है?"}, {"role": "assistant", "content": "मेरा पिता पेड़ के पास हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका पिता कहाँ है?"}, {"role": "assistant", "content": "मेरा पिता नदी के पास हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका पिता कहाँ है?"}, {"role": "assistant", "content": "मेरा पिता पहाड़ पर हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका पिता कहाँ है?"}, {"role": "assistant", "content": "मेरा पिता रास्ते पर हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका पिता कहाँ है?"}, {"role": "assistant", "content": "मेरा पिता बाहर हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका पिता कहाँ है?"}, {"role": "assistant", "content": "मेरा पिता अंदर हैं।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटा कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटा घर पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटा कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटा शहर में है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटा कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटा गांव में है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटा कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटा पेड़ के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटा कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटा नदी के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटा कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटा पहाड़ पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटा कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटा रास्ते पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटा कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटा बाहर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटा कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटा अंदर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटी कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटी घर पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटी कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटी शहर में है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटी कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटी गांव में है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटी कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटी पेड़ के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटी कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटी नदी के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटी कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटी पहाड़ पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटी कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटी रास्ते पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटी कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटी बाहर है।"}]}
+{"messages": [{"role": "user", "content": "आपका बेटी कहाँ है?"}, {"role": "assistant", "content": "मेरा बेटी अंदर है।"}]}
+{"messages": [{"role": "user", "content": "आपका गाड़ी कहाँ है?"}, {"role": "assistant", "content": "मेरा गाड़ी घर पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका गाड़ी कहाँ है?"}, {"role": "assistant", "content": "मेरा गाड़ी शहर में है।"}]}
+{"messages": [{"role": "user", "content": "आपका गाड़ी कहाँ है?"}, {"role": "assistant", "content": "मेरा गाड़ी गांव में है।"}]}
+{"messages": [{"role": "user", "content": "आपका गाड़ी कहाँ है?"}, {"role": "assistant", "content": "मेरा गाड़ी पेड़ के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका गाड़ी कहाँ है?"}, {"role": "assistant", "content": "मेरा गाड़ी नदी के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका गाड़ी कहाँ है?"}, {"role": "assistant", "content": "मेरा गाड़ी पहाड़ पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका गाड़ी कहाँ है?"}, {"role": "assistant", "content": "मेरा गाड़ी रास्ते पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका गाड़ी कहाँ है?"}, {"role": "assistant", "content": "मेरा गाड़ी बाहर है।"}]}
+{"messages": [{"role": "user", "content": "आपका गाड़ी कहाँ है?"}, {"role": "assistant", "content": "मेरा गाड़ी अंदर है।"}]}
+{"messages": [{"role": "user", "content": "आपका कलम कहाँ है?"}, {"role": "assistant", "content": "मेरा कलम घर पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका कलम कहाँ है?"}, {"role": "assistant", "content": "मेरा कलम शहर में है।"}]}
+{"messages": [{"role": "user", "content": "आपका कलम कहाँ है?"}, {"role": "assistant", "content": "मेरा कलम गांव में है।"}]}
+{"messages": [{"role": "user", "content": "आपका कलम कहाँ है?"}, {"role": "assistant", "content": "मेरा कलम पेड़ के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका कलम कहाँ है?"}, {"role": "assistant", "content": "मेरा कलम नदी के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका कलम कहाँ है?"}, {"role": "assistant", "content": "मेरा कलम पहाड़ पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका कलम कहाँ है?"}, {"role": "assistant", "content": "मेरा कलम रास्ते पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका कलम कहाँ है?"}, {"role": "assistant", "content": "मेरा कलम बाहर है।"}]}
+{"messages": [{"role": "user", "content": "आपका कलम कहाँ है?"}, {"role": "assistant", "content": "मेरा कलम अंदर है।"}]}
+{"messages": [{"role": "user", "content": "आपका पुस्तक कहाँ है?"}, {"role": "assistant", "content": "मेरा पुस्तक घर पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका पुस्तक कहाँ है?"}, {"role": "assistant", "content": "मेरा पुस्तक शहर में है।"}]}
+{"messages": [{"role": "user", "content": "आपका पुस्तक कहाँ है?"}, {"role": "assistant", "content": "मेरा पुस्तक गांव में है।"}]}
+{"messages": [{"role": "user", "content": "आपका पुस्तक कहाँ है?"}, {"role": "assistant", "content": "मेरा पुस्तक पेड़ के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका पुस्तक कहाँ है?"}, {"role": "assistant", "content": "मेरा पुस्तक नदी के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका पुस्तक कहाँ है?"}, {"role": "assistant", "content": "मेरा पुस्तक पहाड़ पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका पुस्तक कहाँ है?"}, {"role": "assistant", "content": "मेरा पुस्तक रास्ते पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका पुस्तक कहाँ है?"}, {"role": "assistant", "content": "मेरा पुस्तक बाहर है।"}]}
+{"messages": [{"role": "user", "content": "आपका पुस्तक कहाँ है?"}, {"role": "assistant", "content": "मेरा पुस्तक अंदर है।"}]}
+{"messages": [{"role": "user", "content": "आपका घर कहाँ है?"}, {"role": "assistant", "content": "मेरा घर घर पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका घर कहाँ है?"}, {"role": "assistant", "content": "मेरा घर शहर में है।"}]}
+{"messages": [{"role": "user", "content": "आपका घर कहाँ है?"}, {"role": "assistant", "content": "मेरा घर गांव में है।"}]}
+{"messages": [{"role": "user", "content": "आपका घर कहाँ है?"}, {"role": "assistant", "content": "मेरा घर पेड़ के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका घर कहाँ है?"}, {"role": "assistant", "content": "मेरा घर नदी के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका घर कहाँ है?"}, {"role": "assistant", "content": "मेरा घर पहाड़ पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका घर कहाँ है?"}, {"role": "assistant", "content": "मेरा घर रास्ते पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका घर कहाँ है?"}, {"role": "assistant", "content": "मेरा घर बाहर है।"}]}
+{"messages": [{"role": "user", "content": "आपका घर कहाँ है?"}, {"role": "assistant", "content": "मेरा घर अंदर है।"}]}
+{"messages": [{"role": "user", "content": "आपका पानी कहाँ है?"}, {"role": "assistant", "content": "मेरा पानी घर पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका पानी कहाँ है?"}, {"role": "assistant", "content": "मेरा पानी शहर में है।"}]}
+{"messages": [{"role": "user", "content": "आपका पानी कहाँ है?"}, {"role": "assistant", "content": "मेरा पानी गांव में है।"}]}
+{"messages": [{"role": "user", "content": "आपका पानी कहाँ है?"}, {"role": "assistant", "content": "मेरा पानी पेड़ के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका पानी कहाँ है?"}, {"role": "assistant", "content": "मेरा पानी नदी के पास है।"}]}
+{"messages": [{"role": "user", "content": "आपका पानी कहाँ है?"}, {"role": "assistant", "content": "मेरा पानी पहाड़ पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका पानी कहाँ है?"}, {"role": "assistant", "content": "मेरा पानी रास्ते पर है।"}]}
+{"messages": [{"role": "user", "content": "आपका पानी कहाँ है?"}, {"role": "assistant", "content": "मेरा पानी बाहर है।"}]}
+{"messages": [{"role": "user", "content": "आपका पानी कहाँ है?"}, {"role": "assistant", "content": "मेरा पानी अंदर है।"}]}
+{"messages": [{"role": "user", "content": "क्या आप चाय पीते हैं?"}, {"role": "assistant", "content": "हाँ, मैं चाय पीता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप चाय पीते हैं?"}, {"role": "assistant", "content": "हाँ, मैं चाय पीती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप पानी पीते हैं?"}, {"role": "assistant", "content": "हाँ, मैं पानी पीता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप पानी पीते हैं?"}, {"role": "assistant", "content": "हाँ, मैं पानी पीती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप दूध पीते हैं?"}, {"role": "assistant", "content": "हाँ, मैं दूध पीता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप दूध पीते हैं?"}, {"role": "assistant", "content": "हाँ, मैं दूध पीती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप खाना खाते हैं?"}, {"role": "assistant", "content": "हाँ, मैं खाना खाता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप खाना खाते हैं?"}, {"role": "assistant", "content": "हाँ, मैं खाना खाती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप रोटी खाते हैं?"}, {"role": "assistant", "content": "हाँ, मैं रोटी खाता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप रोटी खाते हैं?"}, {"role": "assistant", "content": "हाँ, मैं रोटी खाती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप फल खाते हैं?"}, {"role": "assistant", "content": "हाँ, मैं फल खाता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या आप फल खाते हैं?"}, {"role": "assistant", "content": "हाँ, मैं फल खाती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम चाय पीते हो?"}, {"role": "assistant", "content": "हाँ, मैं चाय पीता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम चाय पीते हो?"}, {"role": "assistant", "content": "हाँ, मैं चाय पीती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम पानी पीते हो?"}, {"role": "assistant", "content": "हाँ, मैं पानी पीता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम पानी पीते हो?"}, {"role": "assistant", "content": "हाँ, मैं पानी पीती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम दूध पीते हो?"}, {"role": "assistant", "content": "हाँ, मैं दूध पीता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम दूध पीते हो?"}, {"role": "assistant", "content": "हाँ, मैं दूध पीती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम खाना खाते हो?"}, {"role": "assistant", "content": "हाँ, मैं खाना खाता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम खाना खाते हो?"}, {"role": "assistant", "content": "हाँ, मैं खाना खाती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम रोटी खाते हो?"}, {"role": "assistant", "content": "हाँ, मैं रोटी खाता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम रोटी खाते हो?"}, {"role": "assistant", "content": "हाँ, मैं रोटी खाती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम फल खाते हो?"}, {"role": "assistant", "content": "हाँ, मैं फल खाता हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या तुम फल खाते हो?"}, {"role": "assistant", "content": "हाँ, मैं फल खाती हूँ।"}]}
+{"messages": [{"role": "user", "content": "क्या वह चाय पीता है?"}, {"role": "assistant", "content": "हाँ, वह चाय पीता है।"}]}
+{"messages": [{"role": "user", "content": "क्या वह चाय पीता है?"}, {"role": "assistant", "content": "हाँ, वह चाय पीती है।"}]}
+{"messages": [{"role": "user", "content": "क्या वह पानी पीता है?"}, {"role": "assistant", "content": "हाँ, वह पानी पीता है।"}]}
+{"messages": [{"role": "user", "content": "क्या वह पानी पीता है?"}, {"role": "assistant", "content": "हाँ, वह पानी पीती है।"}]}
+{"messages": [{"role": "user", "content": "क्या वह दूध पीता है?"}, {"role": "assistant", "content": "हाँ, वह दूध पीता है।"}]}
+{"messages": [{"role": "user", "content": "क्या वह दूध पीता है?"}, {"role": "assistant", "content": "हाँ, वह दूध पीती है।"}]}
+{"messages": [{"role": "user", "content": "क्या वह खाना खाता है?"}, {"role": "assistant", "content": "हाँ, वह खाना खाता है।"}]}
+{"messages": [{"role": "user", "content": "क्या वह खाना खाता है?"}, {"role": "assistant", "content": "हाँ, वह खाना खाती है।"}]}
+{"messages": [{"role": "user", "content": "क्या वह रोटी खाता है?"}, {"role": "assistant", "content": "हाँ, वह रोटी खाता है।"}]}
+{"messages": [{"role": "user", "content": "क्या वह रोटी खाता है?"}, {"role": "assistant", "content": "हाँ, वह रोटी खाती है।"}]}
+{"messages": [{"role": "user", "content": "क्या वह फल खाता है?"}, {"role": "assistant", "content": "हाँ, वह फल खाता है।"}]}
+{"messages": [{"role": "user", "content": "क्या वह फल खाता है?"}, {"role": "assistant", "content": "हाँ, वह फल खाती है।"}]}
+{"messages": [{"role": "user", "content": "क्या हम चाय पीते हैं?"}, {"role": "assistant", "content": "हाँ, हम चाय पीता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या हम चाय पीते हैं?"}, {"role": "assistant", "content": "हाँ, हम चाय पीती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या हम पानी पीते हैं?"}, {"role": "assistant", "content": "हाँ, हम पानी पीता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या हम पानी पीते हैं?"}, {"role": "assistant", "content": "हाँ, हम पानी पीती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या हम दूध पीते हैं?"}, {"role": "assistant", "content": "हाँ, हम दूध पीता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या हम दूध पीते हैं?"}, {"role": "assistant", "content": "हाँ, हम दूध पीती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या हम खाना खाते हैं?"}, {"role": "assistant", "content": "हाँ, हम खाना खाता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या हम खाना खाते हैं?"}, {"role": "assistant", "content": "हाँ, हम खाना खाती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या हम रोटी खाते हैं?"}, {"role": "assistant", "content": "हाँ, हम रोटी खाता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या हम रोटी खाते हैं?"}, {"role": "assistant", "content": "हाँ, हम रोटी खाती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या हम फल खाते हैं?"}, {"role": "assistant", "content": "हाँ, हम फल खाता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या हम फल खाते हैं?"}, {"role": "assistant", "content": "हाँ, हम फल खाती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे चाय पीते हैं?"}, {"role": "assistant", "content": "हाँ, वे चाय पीता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे चाय पीते हैं?"}, {"role": "assistant", "content": "हाँ, वे चाय पीती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे पानी पीते हैं?"}, {"role": "assistant", "content": "हाँ, वे पानी पीता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे पानी पीते हैं?"}, {"role": "assistant", "content": "हाँ, वे पानी पीती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे दूध पीते हैं?"}, {"role": "assistant", "content": "हाँ, वे दूध पीता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे दूध पीते हैं?"}, {"role": "assistant", "content": "हाँ, वे दूध पीती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे खाना खाते हैं?"}, {"role": "assistant", "content": "हाँ, वे खाना खाता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे खाना खाते हैं?"}, {"role": "assistant", "content": "हाँ, वे खाना खाती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे रोटी खाते हैं?"}, {"role": "assistant", "content": "हाँ, वे रोटी खाता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे रोटी खाते हैं?"}, {"role": "assistant", "content": "हाँ, वे रोटी खाती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे फल खाते हैं?"}, {"role": "assistant", "content": "हाँ, वे फल खाता हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या वे फल खाते हैं?"}, {"role": "assistant", "content": "हाँ, वे फल खाती हैं।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास कलम है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक अच्छा कलम है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास कलम है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक नया कलम है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास कलम है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक पुराना कलम है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास कलम है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक छोटा कलम है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास कलम है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक बड़ा कलम है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास कलम है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक सुंदर कलम है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास कलम है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक साफ़ कलम है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पुस्तक है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक अच्छा पुस्तक है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पुस्तक है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक नया पुस्तक है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पुस्तक है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक पुराना पुस्तक है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पुस्तक है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक छोटा पुस्तक है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पुस्तक है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक बड़ा पुस्तक है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पुस्तक है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक सुंदर पुस्तक है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पुस्तक है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक साफ़ पुस्तक है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास गाड़ी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक अच्छा गाड़ी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास गाड़ी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक नया गाड़ी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास गाड़ी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक पुराना गाड़ी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास गाड़ी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक छोटा गाड़ी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास गाड़ी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक बड़ा गाड़ी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास गाड़ी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक सुंदर गाड़ी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास गाड़ी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक साफ़ गाड़ी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास घर है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक अच्छा घर है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास घर है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक नया घर है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास घर है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक पुराना घर है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास घर है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक छोटा घर है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास घर है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक बड़ा घर है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास घर है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक सुंदर घर है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास घर है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक साफ़ घर है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास रोटी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक अच्छा रोटी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास रोटी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक नया रोटी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास रोटी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक पुराना रोटी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास रोटी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक छोटा रोटी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास रोटी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक बड़ा रोटी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास रोटी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक सुंदर रोटी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास रोटी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक साफ़ रोटी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पानी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक अच्छा पानी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पानी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक नया पानी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पानी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक पुराना पानी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पानी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक छोटा पानी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पानी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक बड़ा पानी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पानी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक सुंदर पानी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास पानी है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक साफ़ पानी है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास फल है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक अच्छा फल है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास फल है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक नया फल है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास फल है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक पुराना फल है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास फल है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक छोटा फल है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास फल है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक बड़ा फल है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास फल है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक सुंदर फल है।"}]}
+{"messages": [{"role": "user", "content": "क्या आपके पास फल है?"}, {"role": "assistant", "content": "हाँ, मेरे पास एक साफ़ फल है।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं सुबह सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं सुबह सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं दोपहर सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं दोपहर सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं शाम सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं शाम सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं रात सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं रात सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं अभी सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं अभी सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं जल्दी सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब सोते हैं?"}, {"role": "assistant", "content": "मैं जल्दी सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं सुबह उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं सुबह उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं दोपहर उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं दोपहर उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं शाम उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं शाम उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं रात उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं रात उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं अभी उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं अभी उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं जल्दी उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब उठते हैं?"}, {"role": "assistant", "content": "मैं जल्दी उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं सुबह पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं सुबह पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं दोपहर पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं दोपहर पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं शाम पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं शाम पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं रात पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं रात पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं अभी पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं अभी पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं जल्दी पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब पढ़ते हैं?"}, {"role": "assistant", "content": "मैं जल्दी पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं सुबह लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं सुबह लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं दोपहर लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं दोपहर लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं शाम लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं शाम लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं रात लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं रात लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं अभी लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं अभी लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं जल्दी लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब लिखते हैं?"}, {"role": "assistant", "content": "मैं जल्दी लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं सुबह चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं सुबह चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं दोपहर चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं दोपहर चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं शाम चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं शाम चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं रात चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं रात चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं अभी चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं अभी चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं जल्दी चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "आप कब चलते हैं?"}, {"role": "assistant", "content": "मैं जल्दी चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं सुबह सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं सुबह सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं दोपहर सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं दोपहर सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं शाम सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं शाम सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं रात सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं रात सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं अभी सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं अभी सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं जल्दी सोता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब सोते हो?"}, {"role": "assistant", "content": "मैं जल्दी सोती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं सुबह उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं सुबह उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं दोपहर उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं दोपहर उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं शाम उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं शाम उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं रात उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं रात उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं अभी उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं अभी उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं जल्दी उठता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब उठते हो?"}, {"role": "assistant", "content": "मैं जल्दी उठती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं सुबह पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं सुबह पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं दोपहर पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं दोपहर पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं शाम पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं शाम पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं रात पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं रात पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं अभी पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं अभी पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं जल्दी पढ़ता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब पढ़ते हो?"}, {"role": "assistant", "content": "मैं जल्दी पढ़ती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं सुबह लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं सुबह लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं दोपहर लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं दोपहर लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं शाम लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं शाम लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं रात लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं रात लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं अभी लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं अभी लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं जल्दी लिखता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब लिखते हो?"}, {"role": "assistant", "content": "मैं जल्दी लिखती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं सुबह चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं सुबह चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं दोपहर चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं दोपहर चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं शाम चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं शाम चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं रात चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं रात चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं अभी चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं अभी चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं जल्दी चलता हूँ।"}]}
+{"messages": [{"role": "user", "content": "तुम कब चलते हो?"}, {"role": "assistant", "content": "मैं जल्दी चलती हूँ।"}]}
+{"messages": [{"role": "user", "content": "मौसम कैसा है?"}, {"role": "assistant", "content": "मौसम अच्छा है।"}]}
+{"messages": [{"role": "user", "content": "मौसम कैसा है?"}, {"role": "assistant", "content": "मौसम बुरा है।"}]}
+{"messages": [{"role": "user", "content": "मौसम कैसा है?"}, {"role": "assistant", "content": "मौसम बड़ा है।"}]}
+{"messages": [{"role": "user", "content": "मौसम कैसा है?"}, {"role": "assistant", "content": "मौसम छोटा है।"}]}
+{"messages": [{"role": "user", "content": "मौसम कैसा है?"}, {"role": "assistant", "content": "मौसम नया है।"}]}
+{"messages": [{"role": "user", "content": "मौसम कैसा है?"}, {"role": "assistant", "content": "मौसम पुराना है।"}]}
+{"messages": [{"role": "user", "content": "मौसम कैसा है?"}, {"role": "assistant", "content": "मौसम साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "मौसम कैसा है?"}, {"role": "assistant", "content": "मौसम गंदा है।"}]}
+{"messages": [{"role": "user", "content": "मौसम कैसा है?"}, {"role": "assistant", "content": "मौसम ठंडा है।"}]}
+{"messages": [{"role": "user", "content": "मौसम कैसा है?"}, {"role": "assistant", "content": "मौसम गरम है।"}]}
+{"messages": [{"role": "user", "content": "घर कैसा है?"}, {"role": "assistant", "content": "घर अच्छा है।"}]}
+{"messages": [{"role": "user", "content": "घर कैसा है?"}, {"role": "assistant", "content": "घर बुरा है।"}]}
+{"messages": [{"role": "user", "content": "घर कैसा है?"}, {"role": "assistant", "content": "घर बड़ा है।"}]}
+{"messages": [{"role": "user", "content": "घर कैसा है?"}, {"role": "assistant", "content": "घर छोटा है।"}]}
+{"messages": [{"role": "user", "content": "घर कैसा है?"}, {"role": "assistant", "content": "घर नया है।"}]}
+{"messages": [{"role": "user", "content": "घर कैसा है?"}, {"role": "assistant", "content": "घर पुराना है।"}]}
+{"messages": [{"role": "user", "content": "घर कैसा है?"}, {"role": "assistant", "content": "घर साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "घर कैसा है?"}, {"role": "assistant", "content": "घर गंदा है।"}]}
+{"messages": [{"role": "user", "content": "घर कैसा है?"}, {"role": "assistant", "content": "घर ठंडा है।"}]}
+{"messages": [{"role": "user", "content": "घर कैसा है?"}, {"role": "assistant", "content": "घर गरम है।"}]}
+{"messages": [{"role": "user", "content": "रास्ता कैसा है?"}, {"role": "assistant", "content": "रास्ता अच्छा है।"}]}
+{"messages": [{"role": "user", "content": "रास्ता कैसा है?"}, {"role": "assistant", "content": "रास्ता बुरा है।"}]}
+{"messages": [{"role": "user", "content": "रास्ता कैसा है?"}, {"role": "assistant", "content": "रास्ता बड़ा है।"}]}
+{"messages": [{"role": "user", "content": "रास्ता कैसा है?"}, {"role": "assistant", "content": "रास्ता छोटा है।"}]}
+{"messages": [{"role": "user", "content": "रास्ता कैसा है?"}, {"role": "assistant", "content": "रास्ता नया है।"}]}
+{"messages": [{"role": "user", "content": "रास्ता कैसा है?"}, {"role": "assistant", "content": "रास्ता पुराना है।"}]}
+{"messages": [{"role": "user", "content": "रास्ता कैसा है?"}, {"role": "assistant", "content": "रास्ता साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "रास्ता कैसा है?"}, {"role": "assistant", "content": "रास्ता गंदा है।"}]}
+{"messages": [{"role": "user", "content": "रास्ता कैसा है?"}, {"role": "assistant", "content": "रास्ता ठंडा है।"}]}
+{"messages": [{"role": "user", "content": "रास्ता कैसा है?"}, {"role": "assistant", "content": "रास्ता गरम है।"}]}
+{"messages": [{"role": "user", "content": "पानी कैसा है?"}, {"role": "assistant", "content": "पानी अच्छा है।"}]}
+{"messages": [{"role": "user", "content": "पानी कैसा है?"}, {"role": "assistant", "content": "पानी बुरा है।"}]}
+{"messages": [{"role": "user", "content": "पानी कैसा है?"}, {"role": "assistant", "content": "पानी बड़ा है।"}]}
+{"messages": [{"role": "user", "content": "पानी कैसा है?"}, {"role": "assistant", "content": "पानी छोटा है।"}]}
+{"messages": [{"role": "user", "content": "पानी कैसा है?"}, {"role": "assistant", "content": "पानी नया है।"}]}
+{"messages": [{"role": "user", "content": "पानी कैसा है?"}, {"role": "assistant", "content": "पानी पुराना है।"}]}
+{"messages": [{"role": "user", "content": "पानी कैसा है?"}, {"role": "assistant", "content": "पानी साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "पानी कैसा है?"}, {"role": "assistant", "content": "पानी गंदा है।"}]}
+{"messages": [{"role": "user", "content": "पानी कैसा है?"}, {"role": "assistant", "content": "पानी ठंडा है।"}]}
+{"messages": [{"role": "user", "content": "पानी कैसा है?"}, {"role": "assistant", "content": "पानी गरम है।"}]}
+{"messages": [{"role": "user", "content": "दूध कैसा है?"}, {"role": "assistant", "content": "दूध अच्छा है।"}]}
+{"messages": [{"role": "user", "content": "दूध कैसा है?"}, {"role": "assistant", "content": "दूध बुरा है।"}]}
+{"messages": [{"role": "user", "content": "दूध कैसा है?"}, {"role": "assistant", "content": "दूध बड़ा है।"}]}
+{"messages": [{"role": "user", "content": "दूध कैसा है?"}, {"role": "assistant", "content": "दूध छोटा है।"}]}
+{"messages": [{"role": "user", "content": "दूध कैसा है?"}, {"role": "assistant", "content": "दूध नया है।"}]}
+{"messages": [{"role": "user", "content": "दूध कैसा है?"}, {"role": "assistant", "content": "दूध पुराना है।"}]}
+{"messages": [{"role": "user", "content": "दूध कैसा है?"}, {"role": "assistant", "content": "दूध साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "दूध कैसा है?"}, {"role": "assistant", "content": "दूध गंदा है।"}]}
+{"messages": [{"role": "user", "content": "दूध कैसा है?"}, {"role": "assistant", "content": "दूध ठंडा है।"}]}
+{"messages": [{"role": "user", "content": "दूध कैसा है?"}, {"role": "assistant", "content": "दूध गरम है।"}]}
+{"messages": [{"role": "user", "content": "दिन कैसा है?"}, {"role": "assistant", "content": "दिन अच्छा है।"}]}
+{"messages": [{"role": "user", "content": "दिन कैसा है?"}, {"role": "assistant", "content": "दिन बुरा है।"}]}
+{"messages": [{"role": "user", "content": "दिन कैसा है?"}, {"role": "assistant", "content": "दिन बड़ा है।"}]}
+{"messages": [{"role": "user", "content": "दिन कैसा है?"}, {"role": "assistant", "content": "दिन छोटा है।"}]}
+{"messages": [{"role": "user", "content": "दिन कैसा है?"}, {"role": "assistant", "content": "दिन नया है।"}]}
+{"messages": [{"role": "user", "content": "दिन कैसा है?"}, {"role": "assistant", "content": "दिन पुराना है।"}]}
+{"messages": [{"role": "user", "content": "दिन कैसा है?"}, {"role": "assistant", "content": "दिन साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "दिन कैसा है?"}, {"role": "assistant", "content": "दिन गंदा है।"}]}
+{"messages": [{"role": "user", "content": "दिन कैसा है?"}, {"role": "assistant", "content": "दिन ठंडा है।"}]}
+{"messages": [{"role": "user", "content": "दिन कैसा है?"}, {"role": "assistant", "content": "दिन गरम है।"}]}
+{"messages": [{"role": "user", "content": "चाय कैसी है?"}, {"role": "assistant", "content": "चाय अच्छी है।"}]}
+{"messages": [{"role": "user", "content": "चाय कैसी है?"}, {"role": "assistant", "content": "चाय बुरी है।"}]}
+{"messages": [{"role": "user", "content": "चाय कैसी है?"}, {"role": "assistant", "content": "चाय बड़ी है।"}]}
+{"messages": [{"role": "user", "content": "चाय कैसी है?"}, {"role": "assistant", "content": "चाय छोटी है।"}]}
+{"messages": [{"role": "user", "content": "चाय कैसी है?"}, {"role": "assistant", "content": "चाय नयी है।"}]}
+{"messages": [{"role": "user", "content": "चाय कैसी है?"}, {"role": "assistant", "content": "चाय पुरानी है।"}]}
+{"messages": [{"role": "user", "content": "चाय कैसी है?"}, {"role": "assistant", "content": "चाय साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "चाय कैसी है?"}, {"role": "assistant", "content": "चाय ठंडी है।"}]}
+{"messages": [{"role": "user", "content": "चाय कैसी है?"}, {"role": "assistant", "content": "चाय गर्मी है।"}]}
+{"messages": [{"role": "user", "content": "रात कैसी है?"}, {"role": "assistant", "content": "रात अच्छी है।"}]}
+{"messages": [{"role": "user", "content": "रात कैसी है?"}, {"role": "assistant", "content": "रात बुरी है।"}]}
+{"messages": [{"role": "user", "content": "रात कैसी है?"}, {"role": "assistant", "content": "रात बड़ी है।"}]}
+{"messages": [{"role": "user", "content": "रात कैसी है?"}, {"role": "assistant", "content": "रात छोटी है।"}]}
+{"messages": [{"role": "user", "content": "रात कैसी है?"}, {"role": "assistant", "content": "रात नयी है।"}]}
+{"messages": [{"role": "user", "content": "रात कैसी है?"}, {"role": "assistant", "content": "रात पुरानी है।"}]}
+{"messages": [{"role": "user", "content": "रात कैसी है?"}, {"role": "assistant", "content": "रात साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "रात कैसी है?"}, {"role": "assistant", "content": "रात ठंडी है।"}]}
+{"messages": [{"role": "user", "content": "रात कैसी है?"}, {"role": "assistant", "content": "रात गर्मी है।"}]}
+{"messages": [{"role": "user", "content": "सुबह कैसी है?"}, {"role": "assistant", "content": "सुबह अच्छी है।"}]}
+{"messages": [{"role": "user", "content": "सुबह कैसी है?"}, {"role": "assistant", "content": "सुबह बुरी है।"}]}
+{"messages": [{"role": "user", "content": "सुबह कैसी है?"}, {"role": "assistant", "content": "सुबह बड़ी है।"}]}
+{"messages": [{"role": "user", "content": "सुबह कैसी है?"}, {"role": "assistant", "content": "सुबह छोटी है।"}]}
+{"messages": [{"role": "user", "content": "सुबह कैसी है?"}, {"role": "assistant", "content": "सुबह नयी है।"}]}
+{"messages": [{"role": "user", "content": "सुबह कैसी है?"}, {"role": "assistant", "content": "सुबह पुरानी है।"}]}
+{"messages": [{"role": "user", "content": "सुबह कैसी है?"}, {"role": "assistant", "content": "सुबह साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "सुबह कैसी है?"}, {"role": "assistant", "content": "सुबह ठंडी है।"}]}
+{"messages": [{"role": "user", "content": "सुबह कैसी है?"}, {"role": "assistant", "content": "सुबह गर्मी है।"}]}
+{"messages": [{"role": "user", "content": "शाम कैसी है?"}, {"role": "assistant", "content": "शाम अच्छी है।"}]}
+{"messages": [{"role": "user", "content": "शाम कैसी है?"}, {"role": "assistant", "content": "शाम बुरी है।"}]}
+{"messages": [{"role": "user", "content": "शाम कैसी है?"}, {"role": "assistant", "content": "शाम बड़ी है।"}]}
+{"messages": [{"role": "user", "content": "शाम कैसी है?"}, {"role": "assistant", "content": "शाम छोटी है।"}]}
+{"messages": [{"role": "user", "content": "शाम कैसी है?"}, {"role": "assistant", "content": "शाम नयी है।"}]}
+{"messages": [{"role": "user", "content": "शाम कैसी है?"}, {"role": "assistant", "content": "शाम पुरानी है।"}]}
+{"messages": [{"role": "user", "content": "शाम कैसी है?"}, {"role": "assistant", "content": "शाम साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "शाम कैसी है?"}, {"role": "assistant", "content": "शाम ठंडी है।"}]}
+{"messages": [{"role": "user", "content": "शाम कैसी है?"}, {"role": "assistant", "content": "शाम गर्मी है।"}]}
+{"messages": [{"role": "user", "content": "रोटी कैसी है?"}, {"role": "assistant", "content": "रोटी अच्छी है।"}]}
+{"messages": [{"role": "user", "content": "रोटी कैसी है?"}, {"role": "assistant", "content": "रोटी बुरी है।"}]}
+{"messages": [{"role": "user", "content": "रोटी कैसी है?"}, {"role": "assistant", "content": "रोटी बड़ी है।"}]}
+{"messages": [{"role": "user", "content": "रोटी कैसी है?"}, {"role": "assistant", "content": "रोटी छोटी है।"}]}
+{"messages": [{"role": "user", "content": "रोटी कैसी है?"}, {"role": "assistant", "content": "रोटी नयी है।"}]}
+{"messages": [{"role": "user", "content": "रोटी कैसी है?"}, {"role": "assistant", "content": "रोटी पुरानी है।"}]}
+{"messages": [{"role": "user", "content": "रोटी कैसी है?"}, {"role": "assistant", "content": "रोटी साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "रोटी कैसी है?"}, {"role": "assistant", "content": "रोटी ठंडी है।"}]}
+{"messages": [{"role": "user", "content": "रोटी कैसी है?"}, {"role": "assistant", "content": "रोटी गर्मी है।"}]}
+{"messages": [{"role": "user", "content": "गाड़ी कैसी है?"}, {"role": "assistant", "content": "गाड़ी अच्छी है।"}]}
+{"messages": [{"role": "user", "content": "गाड़ी कैसी है?"}, {"role": "assistant", "content": "गाड़ी बुरी है।"}]}
+{"messages": [{"role": "user", "content": "गाड़ी कैसी है?"}, {"role": "assistant", "content": "गाड़ी बड़ी है।"}]}
+{"messages": [{"role": "user", "content": "गाड़ी कैसी है?"}, {"role": "assistant", "content": "गाड़ी छोटी है।"}]}
+{"messages": [{"role": "user", "content": "गाड़ी कैसी है?"}, {"role": "assistant", "content": "गाड़ी नयी है।"}]}
+{"messages": [{"role": "user", "content": "गाड़ी कैसी है?"}, {"role": "assistant", "content": "गाड़ी पुरानी है।"}]}
+{"messages": [{"role": "user", "content": "गाड़ी कैसी है?"}, {"role": "assistant", "content": "गाड़ी साफ़ है।"}]}
+{"messages": [{"role": "user", "content": "गाड़ी कैसी है?"}, {"role": "assistant", "content": "गाड़ी ठंडी है।"}]}
+{"messages": [{"role": "user", "content": "गाड़ी कैसी है?"}, {"role": "assistant", "content": "गाड़ी गर्मी है।"}]}

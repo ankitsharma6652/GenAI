@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gemma 2B Hindi QLoRA & Constrained Inference Visualization</title>
+  <!-- Load allowlisted Tailwind CSS -->
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Custom scrollbar and subtle transitions */
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .math {
+      font-family: "Times New Roman", Times, serif;
+      font-style: italic;
+    }
+    .matrix {
+      display: inline-flex;
+      align-items: center;
+      border-left: 2px solid var(--foreground);
+      border-right: 2px solid var(--foreground);
+      padding: 0 4px;
+      margin: 0 4px;
+    }
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased min-h-screen p-6">
+
+  <div class="max-w-6xl mx-auto space-y-6">
+    <!-- Header -->
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-2xl font-bold tracking-tight text-[var(--foreground)]">Gemma 2B Hindi Fine-Tuning & Constrained Inference</h1>
+          <p class="text-[var(--muted-foreground)] mt-1">An interactive teaching visualization of QLoRA and Vocabulary-Constrained Decoding.</p>
+        </div>
+        <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-500/10 text-green-500 border border-green-500/20">
+          Academic Guide
+        </span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="flex border-b border-[var(--border)] gap-2 overflow-x-auto pb-1">
+      <button onclick="switchTab('dataset')" id="tab-btn-dataset" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent text-[var(--muted-foreground)] hover:text-[var(--foreground)] active">
+        1. Dataset & Vocab
+      </button>
+      <button onclick="switchTab('quantization')" id="tab-btn-quantization" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+        2. 4-bit Quantization (QLoRA)
+      </button>
+      <button onclick="switchTab('lora')" id="tab-btn-lora" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+        3. LoRA Adaptation
+      </button>
+      <button onclick="switchTab('training')" id="tab-btn-training" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+        4. SFT Training Loop
+      </button>
+      <button onclick="switchTab('logits')" id="tab-btn-logits" class="tab-btn px-4 py-2 text-sm font-medium border-b-2 border-transparent text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+        5. Logits Masking Sim
+      </button>
+    </div>
+
+    <!-- TAB 1: DATASET & VOCABULARY -->
+    <div id="tab-dataset" class="tab-content active space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-2 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-semibold">1. Data Augmentation & Vocabulary Extraction</h2>
+          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+            To fine-tune a model that speaks Hindi *exclusively* using a restricted vocabulary of 300 words, we start by programmatically compiling a structured training set. A set of 65 core seed questions is expanded through combinatorial templates (Locations, Pronouns, Description, etc.) to generate 516 dialogue pairs.
+          </p>
+          <div class="border border-[var(--border)] rounded-xl p-4 bg-[var(--background)] space-y-2">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Dialogue Augmentation Process</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div class="p-3 bg-[var(--card)] border border-[var(--border)] rounded-lg">
+                <span class="font-bold text-blue-500">Seed Question:</span>
+                <p class="mt-1 text-[var(--muted-foreground)]">"नमस्ते"</p>
+              </div>
+              <div class="flex items-center justify-center font-bold text-[var(--muted-foreground)]">
+                &rarr; Templating &rarr;
+              </div>
+              <div class="p-3 bg-[var(--card)] border border-[var(--border)] rounded-lg">
+                <span class="font-bold text-green-500">Augmented Q&A:</span>
+                <p class="mt-1 text-[var(--muted-foreground)]">"क्या आप चाय पीते हैं?" &rarr; "हाँ, मैं चाय पीता हूँ।"</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-[var(--muted-foreground)]">
+            Every assistant response is stripped of punctuation and tokenized to extract unique Hindi words. These unique words are combined with a padding pool of standard connectors and verbs to compile a file called <code class="text-xs font-mono bg-[var(--background)] px-1 rounded">hindi_vocab.json</code> containing exactly 300 unique words.
+          </p>
+        </div>
+
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-semibold">Gemma's Chat Template</h2>
+          <p class="text-sm text-[var(--muted-foreground)]">
+            Supervised Fine-Tuning requires dialogues to be wrapped in the base model's structural template. Gemma uses custom turn markers:
+          </p>
+          <pre class="text-xs font-mono bg-[var(--background)] p-4 rounded-xl border border-[var(--border)] text-green-400 overflow-x-auto">
+&lt;start_of_turn&gt;user
+नमस्ते दोस्त! आप कैसे हैं?&lt;end_of_turn&gt;
+&lt;start_of_turn&gt;model
+मैं ठीक हूँ। आप कैसे हैं?&lt;end_of_turn&gt;</pre>
+          <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+            These structural tags (like <code class="text-xs font-mono">user</code>, <code class="text-xs font-mono">model</code>, and turn bounds) tell the autoregressive network when the prompt ends and when it is expected to generate tokens.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: 4-BIT QUANTIZATION (QLoRA) -->
+    <div id="tab-quantization" class="tab-content space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-2 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-semibold">2. QLoRA: Quantization & Memory Optimization</h2>
+          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+            Gemma 2B has 2.6 billion parameters. Loading them in standard 16-bit float (FP16) requires ~5.2GB of VRAM. QLoRA (Quantized Low-Rank Adaptation) quantizes these base weights to 4-bit, dropping VRAM footprint to ~1.5GB.
+          </p>
+
+          <!-- Diagram block -->
+          <div class="border border-[var(--border)] rounded-xl p-4 bg-[var(--background)] space-y-4">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Quantization Bit-Reduction Comparison</h3>
+            <div class="flex flex-col sm:flex-row gap-4 items-center justify-around text-center text-xs">
+              <div class="flex-1 w-full p-4 border border-[var(--border)] bg-[var(--card)] rounded-xl">
+                <span class="font-bold text-red-500">FP16 (16-bit Float)</span>
+                <div class="w-full bg-red-500/10 h-6 rounded my-2 border border-red-500/20 flex items-center justify-center font-mono">
+                  16 bits / weight
+                </div>
+                <p class="text-[var(--muted-foreground)]">VRAM Footprint: ~5.2 GB</p>
+              </div>
+              <div class="text-xl font-bold text-[var(--muted-foreground)]">&rarr;</div>
+              <div class="flex-1 w-full p-4 border border-[var(--border)] bg-[var(--card)] rounded-xl">
+                <span class="font-bold text-green-500">NF4 (4-bit NormalFloat4)</span>
+                <div class="w-full bg-green-500/10 h-6 rounded my-2 border border-green-500/20 flex items-center justify-center font-mono">
+                  4 bits / weight
+                </div>
+                <p class="text-[var(--muted-foreground)]">VRAM Footprint: ~1.5 GB</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <h3 class="text-sm font-semibold">Mathematical Concepts of QLoRA:</h3>
+            <ul class="list-disc pl-5 text-sm text-[var(--muted-foreground)] space-y-2">
+              <li>
+                <strong>NormalFloat4 (NF4) Data Type:</strong> W is scaled so that its weights follow a normal distribution. NF4 splits the normal distribution into 16 discrete intervals with equal expectation values, optimizing dynamic range representation compared to standard integer quantization.
+              </li>
+              <li>
+                <strong>Double Quantization (DQ):</strong> Quantization scales are themselves quantized (from 32-bit float to 8-bit float), saving an extra 0.37 bits per parameter.
+              </li>
+              <li>
+                <strong>Compute Dequantization:</strong> During the active forward and backward passes, the 4-bit weights are dynamically dequantized to 16-bit <span class="math">bfloat16</span> for calculations. No computation actually takes place in 4-bit; it is strictly a storage compression technique.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-semibold">Memory Scaling Equations</h2>
+          <p class="text-sm text-[var(--muted-foreground)]">
+            A weight matrix <span class="math">W</span> is quantized into integers <span class="math">q</span> using a quantization scale factor <span class="math">c</span>:
+          </p>
+          <div class="p-3 bg-[var(--background)] border border-[var(--border)] rounded-xl text-center text-sm font-mono my-2 text-blue-400">
+            q = round( W / c )
+          </div>
+          <p class="text-sm text-[var(--muted-foreground)]">
+            To run a forward pass multiplication with input activation <span class="math">x</span>, we dequantize <span class="math">q</span> dynamically:
+          </p>
+          <div class="p-3 bg-[var(--background)] border border-[var(--border)] rounded-xl text-center text-sm font-mono my-2 text-blue-400">
+            Y = ( q &times; c ) &times; x
+          </div>
+          <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+            By keeping the base weights frozen in 4-bit NF4, we eliminate the need to track optimizer states for these parameters, which typically consume twice as much memory as the weights themselves.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: LORA ADAPTATION -->
+    <div id="tab-lora" class="tab-content space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-2 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-semibold">3. LoRA: Low-Rank Adaptation</h2>
+          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+            Instead of training all 2.6 billion weights, LoRA freezes the base weight matrix <span class="math">W<sub>base</sub></span> and decomposes the weight update matrix <span class="math">&Delta;W</span> into two slender matrices, <span class="math">A</span> and <span class="math">B</span>, joined by a bottleneck dimension called rank <span class="math">r</span>.
+          </p>
+
+          <!-- Matrix Diagram -->
+          <div class="border border-[var(--border)] rounded-xl p-6 bg-[var(--background)] space-y-4">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">LoRA Matrix Decomposition</h3>
+            <div class="flex items-center justify-center gap-4 text-center">
+              <div class="w-24 h-24 bg-red-500/10 border border-red-500/30 rounded flex items-center justify-center text-xs flex-col">
+                <span class="font-bold">W<sub>base</sub></span>
+                <span class="text-[var(--muted-foreground)]">(Frozen)</span>
+                <span class="text-[var(--muted-foreground)]">d &times; k</span>
+              </div>
+              <div class="text-xl font-bold text-[var(--muted-foreground)]">+</div>
+              <div class="flex gap-1 items-center">
+                <div class="w-8 h-24 bg-green-500/10 border border-green-500/30 rounded flex items-center justify-center text-xs flex-col">
+                  <span class="font-bold">A</span>
+                  <span class="text-[var(--muted-foreground)]">d &times; r</span>
+                </div>
+                <div class="w-24 h-8 bg-green-500/10 border border-green-500/30 rounded flex items-center justify-center text-xs flex-col">
+                  <span class="font-bold">B</span>
+                  <span class="text-[var(--muted-foreground)]">r &times; k</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parameter size Calculator -->
+          <div class="p-4 bg-[var(--background)] border border-[var(--border)] rounded-xl space-y-4">
+            <h3 class="text-sm font-semibold">LoRA Parameter Footprint Calculator</h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <label class="block text-xs text-[var(--muted-foreground)] uppercase">Rank (r):</label>
+                <input type="range" id="lora-r" min="4" max="32" step="4" value="16" oninput="calculateParameters()" class="w-full mt-1 accent-green-500">
+                <span id="label-r" class="font-mono text-xs">16</span>
+              </div>
+              <div>
+                <label class="block text-xs text-[var(--muted-foreground)] uppercase">Scaling Alpha (&alpha;):</label>
+                <input type="range" id="lora-alpha" min="8" max="64" step="8" value="32" oninput="calculateParameters()" class="w-full mt-1 accent-green-500">
+                <span id="label-alpha" class="font-mono text-xs">32</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-[var(--border)] text-xs grid grid-cols-2 gap-4 text-[var(--muted-foreground)]">
+              <div>Trainable Parameters: <span id="param-count" class="font-mono font-bold text-green-500">10,485,760</span></div>
+              <div>Scaling Factor (&alpha;/r): <span id="scaling-factor" class="font-mono font-bold text-blue-500">2.00</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-semibold">LoRA Forward Pass Equation</h2>
+          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+            The forward pass computation in a LoRA-equipped layer is mathematically defined as:
+          </p>
+          <div class="p-4 bg-[var(--background)] border border-[var(--border)] rounded-xl text-center text-sm font-mono my-2 text-green-400">
+            h = W<sub>base</sub> &middot; x + &Delta;W &middot; x<br>
+            h = W<sub>base</sub> &middot; x + ( &alpha; / r ) &middot; ( B &middot; A ) &middot; x
+          </div>
+          <ul class="list-disc pl-5 text-xs text-[var(--muted-foreground)] space-y-2">
+            <li><strong>Input <span class="math">x</span></strong> is passed through both the frozen base weight and the bottleneck adapters.</li>
+            <li><strong>Scaling factor <span class="math">&alpha;/r</span></strong> ensures that when the rank <span class="math">r</span> is changed, the relative magnitude of the adapter's adjustments remains stable without needing to reset the learning rate.</li>
+            <li><strong>Gradient Updates:</strong> Backpropagation only calculates derivatives and updates weights for matrices <span class="math">A</span> and <span class="math">B</span>, keeping memory footprints low.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: SFT TRAINING LOOP -->
+    <div id="tab-training" class="tab-content space-y-6">
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 space-y-4">
+        <h2 class="text-lg font-semibold">4. Supervised Fine-Tuning (SFT) Loop</h2>
+        <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+          The SFT training loop iteratively optimizes our LoRA adapters to adapt Gemma's conversational outputs to the custom dialogue pairs.
+        </p>
+
+        <!-- Pipeline graphic -->
+        <div class="border border-[var(--border)] rounded-xl p-6 bg-[var(--background)] space-y-4">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">SFT Training Step Pipeline</h3>
+          <div class="flex flex-col md:flex-row gap-4 items-stretch justify-between text-xs">
+            <div class="flex-1 p-3 bg-[var(--card)] border border-[var(--border)] rounded-lg flex flex-col justify-between">
+              <span class="font-bold text-blue-500">1. Input Formatting</span>
+              <p class="text-[var(--muted-foreground)] mt-1">Dialogue pair formatted using Chat Template and parsed into token IDs.</p>
+            </div>
+            <div class="flex items-center justify-center font-bold text-[var(--muted-foreground)]">&rarr;</div>
+            <div class="flex-1 p-3 bg-[var(--card)] border border-[var(--border)] rounded-lg flex flex-col justify-between">
+              <span class="font-bold text-purple-500">2. Forward Pass</span>
+              <p class="text-[var(--muted-foreground)] mt-1">Dequantizes base weights (NF4 &rarr; BF16), calculates activations, and feeds through LoRA layers.</p>
+            </div>
+            <div class="flex items-center justify-center font-bold text-[var(--muted-foreground)]">&rarr;</div>
+            <div class="flex-1 p-3 bg-[var(--card)] border border-[var(--border)] rounded-lg flex flex-col justify-between">
+              <span class="font-bold text-yellow-500">3. Loss Calculation</span>
+              <p class="text-[var(--muted-foreground)] mt-1">Cross-entropy loss computed between model outputs and target tokens.</p>
+            </div>
+            <div class="flex items-center justify-center font-bold text-[var(--muted-foreground)]">&rarr;</div>
+            <div class="flex-1 p-3 bg-[var(--card)] border border-[var(--border)] rounded-lg flex flex-col justify-between">
+              <span class="font-bold text-green-500">4. Backward Pass</span>
+              <p class="text-[var(--muted-foreground)] mt-1">Gradients calculated *only* for the parameters of matrices A & B. Optimizer updates weights.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-[var(--muted-foreground)]">
+          <div class="space-y-2">
+            <h3 class="font-semibold text-[var(--foreground)]">Cosine Learning Rate Decay</h3>
+            <p class="leading-relaxed">
+              During training, the learning rate starts at <span class="math">2 &times; 10<sup>-4</sup></span> and is decayed according to a cosine schedule. This allows the model to make large structural updates in the early epochs and fine-tune subtle updates as training finishes, ensuring stable convergence.
+            </p>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-semibold text-[var(--foreground)]">8-bit Paged Optimizer</h3>
+            <p class="leading-relaxed">
+              Using <code class="text-xs font-mono bg-[var(--background)] px-1 rounded">paged_adamw_8bit</code> reduces the memory occupied by AdamW optimizer states. It compresses state parameters to 8-bit, and dynamically "pages" them to CPU RAM if GPU memory limits are reached, preventing Out-Of-Memory training crashes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: LOGITS MASKING SIMULATOR -->
+    <div id="tab-logits" class="tab-content space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Simulator Controls -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 space-y-4">
+          <h2 class="text-lg font-semibold">Logits Masking Simulator</h2>
+          <p class="text-sm text-[var(--muted-foreground)] leading-relaxed">
+            The logits processor intercepts raw model prediction scores (logits) before the softmax selection step and applies a mask.
+          </p>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)] mb-1">Select User Prompt:</label>
+              <select id="sim-prompt" onchange="loadPrompt()" class="w-full bg-[var(--background)] border border-[var(--border)] text-[var(--foreground)] rounded-lg p-2 text-sm focus:outline-none focus:ring-1 focus:ring-green-500">
+                <option value="p1">"नमस्ते दोस्त, आप कैसे हैं?"</option>
+                <option value="p2">"कलम कहाँ रखी है?"</option>
+                <option value="p3">"वह औरत कौन है?"</option>
+              </select>
+            </div>
+
+            <!-- Masking Toggle -->
+            <div class="flex items-center justify-between p-3 border border-[var(--border)] bg-[var(--background)] rounded-xl">
+              <div>
+                <span class="text-sm font-semibold block">Vocabulary Masking</span>
+                <span class="text-xs text-[var(--muted-foreground)]">Only allow the 300 words</span>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="mask-toggle" onchange="runSimulation()" class="sr-only peer">
+                <div class="w-11 h-6 bg-red-500/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
+              </label>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-[var(--border)] space-y-2">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Output Probabilities Equation</h3>
+            <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+              Masked logits are converted to selection probabilities using Softmax:
+            </p>
+            <div class="p-3 bg-[var(--background)] border border-[var(--border)] text-center text-xs font-mono text-blue-400">
+              P(token<sub>i</sub>) = e<sup>logits<sub>masked</sub>(i)</sup> / &sum;<sub>j</sub> e<sup>logits<sub>masked</sub>(j)</sup>
+            </div>
+            <p class="text-xs text-[var(--muted-foreground)]">
+              When a disallowed token's logit is set to <span class="math">-&infin;</span>, its term <span class="math">e<sup>-&infin;</sup></span> becomes exactly <span class="math">0</span>, making its probability 0.00%.
+            </p>
+          </div>
+        </div>
+
+        <!-- Simulator Output Display -->
+        <div class="md:col-span-2 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold">Active Logits State</h2>
+            <span id="mask-status" class="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-red-500/10 text-red-500 border border-red-500/20">
+              Mask Disabled
+            </span>
+          </div>
+
+          <!-- Tokens table -->
+          <div class="overflow-x-auto border border-[var(--border)] rounded-xl bg-[var(--background)]">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="border-b border-[var(--border)] bg-[var(--card)]">
+                  <th class="p-3 font-semibold text-[var(--muted-foreground)]">Token (Word)</th>
+                  <th class="p-3 font-semibold text-[var(--muted-foreground)]">Type</th>
+                  <th class="p-3 font-semibold text-[var(--muted-foreground)] text-right">Raw Logit</th>
+                  <th class="p-3 font-semibold text-[var(--muted-foreground)] text-right">Masked Logit</th>
+                  <th class="p-3 font-semibold text-[var(--muted-foreground)] text-right">Probability</th>
+                </tr>
+              </thead>
+              <tbody id="logits-table-body">
+                <!-- Javascript will insert tokens dynamically -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Generation output -->
+          <div class="p-4 bg-[var(--background)] border border-[var(--border)] rounded-xl space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)]">Generated Token Choice</span>
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-semibold">Selected Token:</span>
+              <span id="selected-token" class="font-mono text-sm bg-green-500/10 text-green-500 border border-green-500/20 px-2.5 py-1 rounded-md font-bold">...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Javascript Logic -->
+  <script>
+    // Tab switching logic
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-green-500', 'text-[var(--foreground)]', 'active');
+        btn.classList.add('border-transparent', 'text-[var(--muted-foreground)]');
+      });
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+      activeBtn.classList.add('border-green-500', 'text-[var(--foreground)]', 'active');
+      activeBtn.classList.remove('border-transparent', 'text-[var(--muted-foreground)]');
+      
+      document.getElementById('tab-' + tabId).classList.add('active');
+      
+      if (tabId === 'logits') {
+        loadPrompt();
+      }
+    }
+
+    // Parameter calculator
+    function calculateParameters() {
+      const r = parseInt(document.getElementById('lora-r').value);
+      const alpha = parseInt(document.getElementById('lora-alpha').value);
+      
+      document.getElementById('label-r').innerText = r;
+      document.getElementById('label-alpha').innerText = alpha;
+
+      // Base weight dim d=2048, bottleneck projections
+      const d = 2048;
+      // Trainable params = 2 * d * r * number of projections (approximate)
+      const params = 2 * d * r * 7; 
+      
+      document.getElementById('param-count').innerText = params.toLocaleString();
+      document.getElementById('scaling-factor').innerText = (alpha / r).toFixed(2);
+    }
+
+    // Simulator token data
+    const promptsData = {
+      p1: [
+        { token: "कैसे", raw: 12.4, allowed: true, type: "Allowed Hindi Word" },
+        { token: "the", raw: 14.1, allowed: false, type: "Disallowed English" },
+        { token: "घर", raw: 8.5, allowed: true, type: "Allowed Hindi Word" },
+        { token: "apple", raw: 11.2, allowed: false, type: "Disallowed English" },
+        { token: "कहाँ", raw: 9.8, allowed: true, type: "Allowed Hindi Word" },
+        { token: "है", raw: 13.2, allowed: true, type: "Allowed Connector" },
+        { token: "cat", raw: 10.5, allowed: false, type: "Disallowed English" }
+      ],
+      p2: [
+        { token: "ऊपर", raw: 11.5, allowed: true, type: "Allowed Hindi Word" },
+        { token: "on", raw: 13.8, allowed: false, type: "Disallowed English" },
+        { token: "पुस्तक", raw: 9.2, allowed: true, type: "Allowed Hindi Word" },
+        { token: "desk", raw: 12.1, allowed: false, type: "Disallowed English" },
+        { token: "है", raw: 12.8, allowed: true, type: "Allowed Connector" }
+      ],
+      p3: [
+        { token: "माँ", raw: 14.2, allowed: true, type: "Allowed Hindi Word" },
+        { token: "mother", raw: 15.6, allowed: false, type: "Disallowed English" },
+        { token: "बहन", raw: 10.4, allowed: true, type: "Allowed Hindi Word" },
+        { token: "woman", raw: 12.8, allowed: false, type: "Disallowed English" },
+        { token: "है", raw: 13.5, allowed: true, type: "Allowed Connector" }
+      ]
+    };
+
+    function loadPrompt() {
+      runSimulation();
+    }
+
+    function runSimulation() {
+      const promptKey = document.getElementById('sim-prompt').value;
+      const maskEnabled = document.getElementById('mask-toggle').checked;
+      const tokens = promptsData[promptKey];
+      
+      const statusSpan = document.getElementById('mask-status');
+      if (maskEnabled) {
+        statusSpan.innerText = "Mask Enabled (Locked to 300 words)";
+        statusSpan.className = "px-2.5 py-0.5 text-xs font-semibold rounded-full bg-green-500/10 text-green-500 border border-green-500/20";
+      } else {
+        statusSpan.innerText = "Mask Disabled";
+        statusSpan.className = "px-2.5 py-0.5 text-xs font-semibold rounded-full bg-red-500/10 text-red-500 border border-red-500/20";
+      }
+
+      // Calculate logits, exponentials and softmax
+      let sumExp = 0;
+      const processedTokens = tokens.map(t => {
+        const maskedVal = (maskEnabled && !t.allowed) ? -Infinity : t.raw;
+        const expVal = maskedVal === -Infinity ? 0 : Math.exp(maskedVal);
+        sumExp += expVal;
+        return { ...t, masked: maskedVal, exp: expVal };
+      });
+
+      // Populate Table
+      const tbody = document.getElementById('logits-table-body');
+      tbody.innerHTML = "";
+
+      let maxProb = -1;
+      let selectedTokenName = "...";
+
+      processedTokens.forEach(t => {
+        const prob = sumExp > 0 ? (t.exp / sumExp) : 0;
+        if (prob > maxProb) {
+          maxProb = prob;
+          selectedTokenName = t.token;
+        }
+
+        const isDisallowedAndMasked = maskEnabled && !t.allowed;
+
+        const tr = document.createElement('tr');
+        tr.className = `border-b border-[var(--border)] hover:bg-[var(--card)]/40 ${isDisallowedAndMasked ? 'opacity-40 bg-red-500/5' : ''}`;
+        
+        tr.innerHTML = `
+          <td class="p-3 font-semibold ${t.allowed ? 'text-green-500' : 'text-red-500'}">"${t.token}"</td>
+          <td class="p-3 text-[var(--muted-foreground)]">${t.type}</td>
+          <td class="p-3 text-right font-mono">${t.raw.toFixed(1)}</td>
+          <td class="p-3 text-right font-mono ${isDisallowedAndMasked ? 'text-red-500 font-bold' : ''}">
+            ${t.masked === -Infinity ? '-&infin;' : t.masked.toFixed(1)}
+          </td>
+          <td class="p-3 text-right font-mono font-semibold text-blue-500">${(prob * 100).toFixed(2)}%</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('selected-token').innerText = `"${selectedTokenName}" (Prob: ${(maxProb * 100).toFixed(2)}%)`;
+    }
+  </script>
+</body>
+</html>

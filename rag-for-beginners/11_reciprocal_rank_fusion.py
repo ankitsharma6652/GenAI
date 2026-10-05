@@ -1,16 +1,29 @@
+import os
+
 from langchain_chroma import Chroma
-from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from pydantic import BaseModel
 from typing import List
 from collections import defaultdict
 
-load_dotenv()
+load_dotenv(override=True)
 
 # Setup
 persistent_directory = "db/chroma_db"
-embedding_model = OpenAIEmbeddings(model="text-embedding-3-small")
-llm = ChatOpenAI(model="gpt-4o", temperature=0)
+embedding_model = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
+
+
+def get_groq_llm():
+    return ChatOpenAI(
+        model= "openai/gpt-oss-120b",
+        base_url= "https://api.groq.com/openai/v1",
+        api_key= os.getenv("GROQ_API_KEY"),
+        max_tokens= 1000
+    )
+
+llm = get_groq_llm()
 
 db = Chroma(
     persist_directory=persistent_directory,
@@ -67,7 +80,7 @@ for i, query in enumerate(query_variations, 1):
     
     for j, doc in enumerate(docs, 1):
         print(f"Document {j}:")
-        print(f"{doc.page_content[:150]}...\n")
+        print(f"{doc.page_content}...\n")
     
     print("-" * 50)
 
